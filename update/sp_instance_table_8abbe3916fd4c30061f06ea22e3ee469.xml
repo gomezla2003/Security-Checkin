@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <display_field>check_in_time</display_field>
+        <field_list>first_name,last_name,visiting,location</field_list>
+        <filter table="x_sthc_security_ch_security_checkin_table">check_out_timeISEMPTY%5Elocation%3D61e9c2956fad6940e59533d9ea3ee46c<item endquery="false" field="check_out_time" goto="false" newquery="false" operator="ISEMPTY" or="false" value="%5Elocation%3D61e9c2956fad6940e59533d9ea3ee46c"/>
+        </filter>
+        <glyph/>
+        <id/>
+        <maximum_entries>10</maximum_entries>
+        <order>0</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">d117955e6f104300277218d22e3ee455</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from URL Definition (Visitor)">e65b63196f54c30061f06ea22e3ee46a</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-07-31 02:51:49</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8abbe3916fd4c30061f06ea22e3ee469</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Visitor Checkout</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_instance_table_8abbe3916fd4c30061f06ea22e3ee469</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-10-29 17:39:56</sys_updated_on>
+        <table>x_sthc_security_ch_security_checkin_table</table>
+        <title>Visitor Checkout</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"use_instance_title": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]></widget_parameters>
+    </sp_instance_table>
+</record_update>

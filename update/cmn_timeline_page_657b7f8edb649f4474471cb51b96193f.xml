@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmn_timeline_page">
+    <cmn_timeline_page action="INSERT_OR_UPDATE">
+        <allow_drag_left>true</allow_drag_left>
+        <allow_drag_right>true</allow_drag_right>
+        <allow_dragging>true</allow_dragging>
+        <auto_refresh>0</auto_refresh>
+        <condition table="change_request">assignment_group=4c6febab6f0dd200277218d22e3ee46a^ORassignment_group=b061b41b6fc6d10061f09ea22e3ee42d^ORassignment_group=caec4f7d6f61d500277218d22e3ee414^ORassignment_group=eb2b8b7d6f61d500277218d22e3ee45c^ORassignment_group=df57d19e6f69310061f09ea22e3ee43b^ORassignment_group=938c0f7d6f61d500277218d22e3ee486^ORassignment_group=3ed2522a6fe93100277218d22e3ee481^start_dateBETWEENjavascript:gs.beginningOfToday()@javascript:gs.endOfNextWeek()^EQ<item display_table="sys_user_group" display_value="Unified Communications" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="4c6febab6f0dd200277218d22e3ee46a"/>
+            <item display_table="sys_user_group" display_value="Server Administration" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="b061b41b6fc6d10061f09ea22e3ee42d"/>
+            <item display_table="sys_user_group" display_value="Database" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="caec4f7d6f61d500277218d22e3ee414"/>
+            <item display_table="sys_user_group" display_value="Field Services" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="eb2b8b7d6f61d500277218d22e3ee45c"/>
+            <item display_table="sys_user_group" display_value="End User Computing/EUC Citrix" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="df57d19e6f69310061f09ea22e3ee43b"/>
+            <item display_table="sys_user_group" display_value="End User Computing/EUC Desktop" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="938c0f7d6f61d500277218d22e3ee486"/>
+            <item display_table="sys_user_group" display_value="Storage" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="3ed2522a6fe93100277218d22e3ee481"/>
+            <item endquery="false" field="start_date" goto="false" newquery="false" operator="BETWEEN" or="false" value="javascript:gs.beginningOfToday()@javascript:gs.endOfNextWeek()"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <css_span_color/>
+        <end_date_field>end_date</end_date_field>
+        <labels>number,assignment_group</labels>
+        <name>x_sthc_security_ch.Change Schedule Infra</name>
+        <perform_custom_sort>false</perform_custom_sort>
+        <range_calculator/>
+        <show_grid_lines>true</show_grid_lines>
+        <show_left_pane>true</show_left_pane>
+        <show_span_text>true</show_span_text>
+        <show_summary_pane>true</show_summary_pane>
+        <show_tooltips>true</show_tooltips>
+        <sort_by>active</sort_by>
+        <sort_by_order>ASC</sort_by_order>
+        <start_date_field>start_date</start_date_field>
+        <suffix>Change Schedule Infrastructure</suffix>
+        <sys_class_name>cmn_timeline_page</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-03-01 18:25:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>657b7f8edb649f4474471cb51b96193f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_sthc_security_ch.Change Schedule Infra</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>cmn_timeline_page_657b7f8edb649f4474471cb51b96193f</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-03-01 18:28:18</sys_updated_on>
+        <table>change_request</table>
+        <tooltip_label>state,short_description,description</tooltip_label>
+    </cmn_timeline_page>
+</record_update>

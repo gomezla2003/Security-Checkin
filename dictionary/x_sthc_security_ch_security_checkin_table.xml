@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Security Checkin Table" max_length="40" name="x_sthc_security_ch_security_checkin_table" type="collection">
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Badge Number" max_length="30" name="badge_number" type="string"/>
+        <element label="Check in Time" max_length="40" name="check_in_time" type="glide_date_time"/>
+        <element label="Check out Time" max_length="40" name="check_out_time" type="glide_date_time"/>
+        <element label="Did not check out" max_length="40" name="did_not_check_out" type="boolean"/>
+        <element label="Drivers License Number" max_length="32" name="drivers_license_number" type="string"/>
+        <element label="First Name" max_length="40" name="first_name" type="string"/>
+        <element label="Last Name" max_length="40" name="last_name" type="string"/>
+        <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
+        <element label="Raw Data" max_length="256" name="raw_data" type="string"/>
+        <element label="Visiting" max_length="32" name="visiting" type="string"/>
+        <index name="index">
+            <element name="location"/>
+        </index>
+    </element>
+</database>

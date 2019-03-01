@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+        <grid_canvas display_value="PA New Tab">7856a1eedb685f04808f68461b961938</grid_canvas>
+        <height>13</height>
+        <portal_widget display_value="Created 03-02-2018 13:53:02">ae676526dba85f04808f68461b961931</portal_widget>
+        <posx>0</posx>
+        <posy>18</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-03-02 20:53:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>fa676526dba85f04808f68461b961934</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_fa676526dba85f04808f68461b961934</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-03-02 20:53:37</sys_updated_on>
+        <width>12</width>
+    </sys_grid_canvas_pane>
+</record_update>

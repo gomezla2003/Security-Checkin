@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field>employee</display_field>
+        <field_list/>
+        <filter table="x_sthc_security_ch_key">checkout_timeISEMPTY^EQ<item endquery="false" field="checkout_time" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">be3a095a6f104300277218d22e3ee417</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Security Key Checkin">412a8d1a6f104300277218d22e3ee49c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-08-02 17:40:34</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>985a095a6f104300277218d22e3ee4ed</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Security Key Checkin</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_instance_table_985a095a6f104300277218d22e3ee4ed</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2017-08-02 17:45:17</sys_updated_on>
+        <table>x_sthc_security_ch_key</table>
+        <title>Security Key Checkin</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+</record_update>

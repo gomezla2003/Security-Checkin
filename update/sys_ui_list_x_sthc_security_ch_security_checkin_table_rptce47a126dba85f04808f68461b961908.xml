@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_sthc_security_ch_security_checkin_table" version="2" view="RPTce47a126dba85f04808f68461b961908">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>check_in_time</element>
+            <list_id display_value="x_sthc_security_ch_security_checkin_table" element="NULL" name="x_sthc_security_ch_security_checkin_table" parent="NULL" relationship="NULL" sys_domain="global" view="ce47a126dba85f04808f68461b96190f">4a47a126dba85f04808f68461b961910</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2018-03-02 20:52:27</sys_created_on>
+            <sys_id>8e47a126dba85f04808f68461b961910</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2018-03-02 20:52:27</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>first_name</element>
+            <list_id display_value="x_sthc_security_ch_security_checkin_table" element="NULL" name="x_sthc_security_ch_security_checkin_table" parent="NULL" relationship="NULL" sys_domain="global" view="ce47a126dba85f04808f68461b96190f">4a47a126dba85f04808f68461b961910</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2018-03-02 20:52:27</sys_created_on>
+            <sys_id>0247a126dba85f04808f68461b961911</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2018-03-02 20:52:27</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>last_name</element>
+            <list_id display_value="x_sthc_security_ch_security_checkin_table" element="NULL" name="x_sthc_security_ch_security_checkin_table" parent="NULL" relationship="NULL" sys_domain="global" view="ce47a126dba85f04808f68461b96190f">4a47a126dba85f04808f68461b961910</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2018-03-02 20:52:27</sys_created_on>
+            <sys_id>8247a126dba85f04808f68461b961911</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2018-03-02 20:52:27</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>visiting</element>
+            <list_id display_value="x_sthc_security_ch_security_checkin_table" element="NULL" name="x_sthc_security_ch_security_checkin_table" parent="NULL" relationship="NULL" sys_domain="global" view="ce47a126dba85f04808f68461b96190f">4a47a126dba85f04808f68461b961910</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2018-03-02 20:52:27</sys_created_on>
+            <sys_id>0647a126dba85f04808f68461b961911</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2018-03-02 20:52:27</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_sthc_security_ch_security_checkin_table</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>LGOMEZ</sys_created_by>
+            <sys_created_on>2018-03-02 20:52:27</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>4a47a126dba85f04808f68461b961910</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sthc_security_ch_security_checkin_table</sys_name>
+            <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+            <sys_update_name>sys_ui_list_x_sthc_security_ch_security_checkin_table_RPTce47a126dba85f04808f68461b961908</sys_update_name>
+            <sys_updated_by>LGOMEZ</sys_updated_by>
+            <sys_updated_on>2018-03-02 20:52:27</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rptce47a126dba85f04808f68461b961908" name="RPTce47a126dba85f04808f68461b961908">ce47a126dba85f04808f68461b96190f</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

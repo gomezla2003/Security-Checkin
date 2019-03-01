@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_m2m_dashboard_tabs">
+    <pa_m2m_dashboard_tabs action="INSERT_OR_UPDATE">
+        <dashboard display_value="Security Checkin Dashboard">7536e56edb685f04808f68461b961946</dashboard>
+        <home>false</home>
+        <homepage/>
+        <order>1</order>
+        <sys_class_name>pa_m2m_dashboard_tabs</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-03-02 20:48:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>f056a1eedb685f04808f68461b96193c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>7536e56edb685f04808f68461b961946</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>pa_m2m_dashboard_tabs_f056a1eedb685f04808f68461b96193c</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-03-02 20:48:15</sys_updated_on>
+        <tab display_value="New Tab">f056a1eedb685f04808f68461b961939</tab>
+    </pa_m2m_dashboard_tabs>
+</record_update>

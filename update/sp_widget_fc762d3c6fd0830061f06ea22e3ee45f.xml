@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  
+  var c = this;  
+	var input1 = '';
+	var input2 = '';
+	var input3 = '';
+	var input4 = '';
+	var DLScan = '';
+	
+	 document.addEventListener('keydown', function(event) {
+    if( event.keyCode == 13 || event.keyCode == 17 || event.keyCode == 74 )
+      event.preventDefault();
+  });
+	
+c.uiAction = function(action) {
+	
+	if(action == 'scan'){
+		swal({
+			title: 'Scan Drivers License',
+			html:
+			'Scan Here<input id="swal-inputDL" class="swal2-input">' + 
+			'Visiting<input id="swal-input3" class="swal2-input">',
+			showCancelButton:true,
+			showCloseButton:true,
+			confirmButtonText:'<i class="fa fa-print"></i> Print!',
+			cancelButtonText:'<i class="fa fa-window-close-o"></i> Cancel',
+			preConfirm: function(){
+			return new Promise(function (resolve){
+			resolve([
+			$('#swal-inputDL').val(),
+			$('#swal-input3').val()
+			])
+			DLScan = $('#swal-inputDL').val();
+			input3 = $('#swal-input3').val();
+			
+				
+		})
+		},
+			 onOpen: function () {
+    $('#swal-inputDL').focus()
+  }
+		}).then(function (result) {
+			
+				c.data.result = result;
+			input1 = getData("DAC","DDFN",result);
+			input2 = getData("DCS","DDEN",result);
+			c.data.DLN = getData("DAQ","DCS",result);
+			var EXP = getData("DBA","DBC",result);
+			EXP = EXP.slice(0,2) + "/" + EXP.slice(2,4) + "/" + EXP.slice(4,8);
+			EXP_Object = new Date(EXP);
+			c.data.EXP = EXP_Object;
+  //swal(input1 + " " + input2 + " " + c.data.DLN + " " + EXP_Object + " " + input3);
+		
+	
+//start
+	var myprinter = '';
+
+		BrowserPrint.getDefaultDevice('printer', function(printer)	
+		{
+			c.data.first = input1;
+			c.data.last = input2;
+			c.data.visit = input3;
+			c.data.badge = input4;
+			c.data.action = action;
+			c.server.update();
+			
+			var name = input1 + " " + input2;
+			var destination = "Visiting: " + input3;
+			var date = c.data.month + " " + c.data.day + " "+ c.data.year;
+			var time = c.data.time;
+			var dayWritten = c.data.dayWritten;
+			//alert(printer.name);
+		  //alert($scope.data.dayWritten);
+			myprinter = printer;
+		  //myprinter.send("^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ^XA^MMT^PW1200^LL0900^LS0^FO960,64^GFA,18432,18432,00024,:Z64:eJztm72S2zYQx8FRNEqnpMi45KNQeQN7xpqU9yKZodz6pYIbF04Xu1Bt1KlYuGAcigg++AFg/3s+XiQd747r8Q3089/gAlwssJAtxGJXs1yntvCFL3zhV+PStzKGi5eiN1b3cOa8mZk/i/9n7P+437/O9vt9yru4nc16eSx9Ys+JHwTklRArxNU4OxHfmUZJeRs5MPLGNjaUV7axolyFryvlgvKDa5WE+1YBePZ6dHTgxv2t/Z3yRmSlCRbAzZjqYWAB33Z/GPPaP2SV8sq5TrlyQ1Ukbj1hOY1/xysa/+6JNdU7zxvKtwzP79K3jL7tX9jAD/nD9Cl/rP7vHu+E+eTm33Hwvtx7rO7PmXjg4q3K7Egl5W4GDiCe7YBR/G/t9ID1srZ/CawvofG6EzcmBRFu08+fYF13rZLwA8OlbXD5B/CK4Vze4/KkaxaAG4eyEvBvQfdRnt+N6Tni37Ya8tCeHD++2btfKZe+Nfvzxrn0/UfIT4y+ZvQVoz/Qfar7RNa1NbSfWmvQunOPBfu7e+wa8rH7+PyM15cdbYH4p3H5JucleC7SzLprwzgNeBUs3/h8hc/tMug+zhsczxGvglNanMeCx0b5cAV59Ngwn4+TGfL4seH+Epw+o3jOGL5huNgZ+xVwZwyf/fo9lz6xp8hPv2F+CCIu4JXA61cJXL/Yxg3l3L7s9newj6vwtdyXg/zmWyXDi5QbN9eofjFJr2DqF3iOqpk6pfE/wPmtuGj9Ih9Uv4DzrfN8qV+m9n/x+oWrNx9Uv4C44uoXN1JUvxQaxe2d9QtcL9nk+uUE1m87tGJ+d51ywfrFOYTOV6GbIbeOFoB/YuqXIFvFeV7i85Ju/9CQh/bk+OefvaXcv975nzfOpTdWb0DeMFZtxivxlE/RX7p/xegF1tvLEKT/yugrRi+wvrW3qzTf2gS0Qnrl9JRL+7Lo/uvSg1Ykf5rufxAlzcOmXvhRFPS+yGSH38UvNK+ax9pHAL5huL2+pflWmh+Yu4yVE+6OSzSv2v1IIf4qLJfjfbMG/Nb2sMsJ/2A/1Zrwjzqygf/FcL3wabzwDekVIt2JO54N/Mx6k/9/ylz+j/XGWh/kycnAWMQX/aJ/hnrlP119PXL6v997Q/5rPN6YL/qr6i8dD5P1pYv/A9GXLv5vL6x/NzN/Fv+fkP8a+2+N0x+JXvc2j/xwaf0HRn/L6GWB9TJn9BmjH0qUNF9tob4aSqlY3wylezJe2beS+VF9R4m+6YugRN/2xVQ6n31H6fyr7rKO6v19EdF33xcQvb/io/rWD5nouzklevPkHOr9NSHVm4KzRHp/6Qj07t8XAf2J7i+Ou1tQoHf1PtK3E/Vc/4w/jX1lcLxbqJf+SwY6nxmcT3/tit5XDvUifI+jvotQoldM/HSBS+PTB/p945mJf269VP1dNVmPr5C+Zdbv1+G79PS8jfPDsNxJPtFYv9FYn2P9bYn1XP78kvJCJzaP/H8uvfSfrn9e5fS7Xff9OzwPUP9TvugXPa//3+fPzsj5trPH0hP/H9mf2fgv/aer5zfF6K80n7OZ/xfqv57L/n4uvWTiueOzOT8c9/u3a/f/j8h4Z3X/vOgX/SX0UuzMh91s1iOnH20e+U3/w+hT/j39aZqe3LN1epXyB/bP6v9l9BrrufvAI+O/3ZFh/2usr7dYX5VYr1I/e/0N1jdM/5rxn73/nKgfbebx/1L0iz1r+w8H3EOv:BCBD^FO736,128^GFA,13440,13440,00020,:Z64:eJzt2k2S2yAQBWAULVjqCByFo8lHIzchN3B2WrhEaCQn6tfPFc1fSnbEIkl9NYxlQTfQwbnjt+56/9fFmicWiRVrnlggVqx5YoFYseaJBWLFmicWiBVrPbFArFhbuha3taXrpGz5sbS1pevNWcvEnLWJWLK2/YS7ZWLO2kQsWZvdvp+jv2/zPv/YlVhhlonNxNTj3G1S1uHwyrjFZldlAxlz01nmSyQ2EOuILZ3B2BzviLXOaCy2OmLS2RiL6Y5Y7WyN5RKWc2huYjmM5bpNO5atKUJ939M+35xpz2p9shaIjcl5ncNqTCYXZ22+2gh5bSipU9mzrVupx1wXS/K4lo3cBrXUtDUvB5WNuclzRMinj2wE61e77DAyh8w+oq9fAc0X+ehhs4KI5a7MPVh6YB1a/Ri0y0fMl4kZPgu1oUwen28oV/y+KZTriO8glJ9FWV+mUeyirLYf77O2uH0382CXLQNp5p+1Nqlg7i6m53iUiQvxEWTSQxy1QNB7PdcCZruDWfaOV6f3f7LHTC6DRbM3q8vizRq257QjrSmvbM60ZzF2Dj3tq+1Ic/eVbfn7GGP+f9q2/TPzWLtxshmY0eQUn8BC0RWTe+0BzgZt8wNng6X0oA3LYev+pUD9ai1lZGWhGZ4hSrHnBWl2z2XPEPDQ3Nbyi90TWpvkebbWalXexKXD+sZS57LnBacOV20P7LAO4stSjkzvsuykbnQM+8j3sO+Fvz/2ntl42HHrZP7EXfPA2N65tnvusnnP4oMZiy0WgyxWWZy3B8SzBssbLL+wPOQ81l6dac9pR9oLvLI5+Y+Xi6kNf7b5nTYQi8RGa5KY0DyxGtQJLRKTEBy0ScLKYBKqGfYvEtKTzrFrHtJGxqPbP5azmAMbrd12Wn1inWOlNEIsBcix1S5Yd5T1Y4C8K+uMhxzbl5Y+s7a0lGCUXWTUnTJ5skHvr3r4361mJsNUS8SQqn0jZui00w5oR1pnXtnqHzWzmTPs4W2mFo0VaqO17/a9sHdFbHyLub9bfGAzWNhpchK4gcnKPxG7grVdA1jbXaBFrAG0D8bzgvzCbEy3jxlb8+h6ydbawgw738/naNh5PV9ao3dYmGViE7Hd91rYfR92L4jeH2L3jPSYr/u/vLV176jnn+l8P3NizHy6zZGYvddSY2gkNhAzd1gk/jA3iZGfM3diWgozZu/YlHkgNn71+2PjFuz4snnA5stiE7FMzFlj8zkTc9ZYHCViztrOO20sH7C8kazhdbhH+Qq7Psh/ht5k512S8y7JeZfkd14775Ic/C7Jma/OfHXmqzNf3e2r89WR2y+UIASM:C470^FO224,288^FO224^FWR0^CFU^FB930,0,0,C,0^FD" + time + "^FS^FO320^FWR0^CFV^FB930,0,0,C,0^FD" + date + "^FS^FO416^FWR0^CFV^FB930,0,0,C,0^FD" + destination +"^FS^FO560^A0,110,110^FWR0^FB1000,0,0,C,0^FD" + name +"^FS^FO30^A0,110,110^FWR0^FB930,0,0,C,0^FD" + dayWritten + "^FS^LRY^FO2,2^GB0,894,156^FS^LRN^PQ1,0,1,Y^XZ");
+	
+		})
+//end
+})
+	}
+	
+	
+	
+	
+	
+	if(action == 'signin'){
+		swal({
+  title: 'Sign In',
+  html:
+    'First Name<input id="swal-input1" class="swal2-input">' +
+    'Last Name<input id="swal-input2" class="swal2-input">' +
+		'Visiting<input id="swal-input3" class="swal2-input">' +
+		'Badge Number<input id="swal-input4" class="swal2-input">',
+  preConfirm: function () {
+    return new Promise(function (resolve) {
+      resolve([
+        $('#swal-input1').val(),
+        $('#swal-input2').val(),
+				$('#swal-input3').val(),
+				$('#swal-input4').val()
+      ])
+   input1 = $('#swal-input1').val();
+	 input2 = $('#swal-input2').val();
+	 input3 = $('#swal-input3').val();
+	 input4 = $('#swal-input4').val();
+		
+		})
+  },
+  onOpen: function () {
+    $('#swal-input1').focus()
+  }
+}).then(function (result) {
+  //swal(JSON.stringify(result))
+	swal(
+  'Thank you ' + $('#swal-input1').val() + " " + $('#swal-input2').val(),
+  'Please return when you are leaving to sign out',
+  'success'
+)
+//start
+	var myprinter = '';
+
+		BrowserPrint.getDefaultDevice('printer', function(printer)	
+		{
+			//alert("test");
+			c.data.first = input1;
+			c.data.last = input2;
+			c.data.visit = input3;
+			c.data.badge = input4;
+			c.data.action = action;
+			c.server.update();
+			var name = c.data.first + " " + c.data.last;
+			var destination = "Visiting: " + c.data.visit;
+			var date = c.data.month + " " + c.data.day + " "+ c.data.year;
+			var time = c.data.time;
+			var dayWritten = c.data.dayWritten;
+			
+			//alert(printer.name);
+		  //alert($scope.data.dayWritten);
+			myprinter = printer;
+		  myprinter.send("^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ^XA^MMT^PW1200^LL0900^LS0^FO960,64^GFA,18432,18432,00024,:Z64:eJztm72S2zYQx8FRNEqnpMi45KNQeQN7xpqU9yKZodz6pYIbF04Xu1Bt1KlYuGAcigg++AFg/3s+XiQd747r8Q3089/gAlwssJAtxGJXs1yntvCFL3zhV+PStzKGi5eiN1b3cOa8mZk/i/9n7P+437/O9vt9yru4nc16eSx9Ys+JHwTklRArxNU4OxHfmUZJeRs5MPLGNjaUV7axolyFryvlgvKDa5WE+1YBePZ6dHTgxv2t/Z3yRmSlCRbAzZjqYWAB33Z/GPPaP2SV8sq5TrlyQ1Ukbj1hOY1/xysa/+6JNdU7zxvKtwzP79K3jL7tX9jAD/nD9Cl/rP7vHu+E+eTm33Hwvtx7rO7PmXjg4q3K7Egl5W4GDiCe7YBR/G/t9ID1srZ/CawvofG6EzcmBRFu08+fYF13rZLwA8OlbXD5B/CK4Vze4/KkaxaAG4eyEvBvQfdRnt+N6Tni37Ya8tCeHD++2btfKZe+Nfvzxrn0/UfIT4y+ZvQVoz/Qfar7RNa1NbSfWmvQunOPBfu7e+wa8rH7+PyM15cdbYH4p3H5JucleC7SzLprwzgNeBUs3/h8hc/tMug+zhsczxGvglNanMeCx0b5cAV59Ngwn4+TGfL4seH+Epw+o3jOGL5huNgZ+xVwZwyf/fo9lz6xp8hPv2F+CCIu4JXA61cJXL/Yxg3l3L7s9newj6vwtdyXg/zmWyXDi5QbN9eofjFJr2DqF3iOqpk6pfE/wPmtuGj9Ih9Uv4DzrfN8qV+m9n/x+oWrNx9Uv4C44uoXN1JUvxQaxe2d9QtcL9nk+uUE1m87tGJ+d51ywfrFOYTOV6GbIbeOFoB/YuqXIFvFeV7i85Ju/9CQh/bk+OefvaXcv975nzfOpTdWb0DeMFZtxivxlE/RX7p/xegF1tvLEKT/yugrRi+wvrW3qzTf2gS0Qnrl9JRL+7Lo/uvSg1Ykf5rufxAlzcOmXvhRFPS+yGSH38UvNK+ax9pHAL5huL2+pflWmh+Yu4yVE+6OSzSv2v1IIf4qLJfjfbMG/Nb2sMsJ/2A/1Zrwjzqygf/FcL3wabzwDekVIt2JO54N/Mx6k/9/ylz+j/XGWh/kycnAWMQX/aJ/hnrlP119PXL6v997Q/5rPN6YL/qr6i8dD5P1pYv/A9GXLv5vL6x/NzN/Fv+fkP8a+2+N0x+JXvc2j/xwaf0HRn/L6GWB9TJn9BmjH0qUNF9tob4aSqlY3wylezJe2beS+VF9R4m+6YugRN/2xVQ6n31H6fyr7rKO6v19EdF33xcQvb/io/rWD5nouzklevPkHOr9NSHVm4KzRHp/6Qj07t8XAf2J7i+Ou1tQoHf1PtK3E/Vc/4w/jX1lcLxbqJf+SwY6nxmcT3/tit5XDvUifI+jvotQoldM/HSBS+PTB/p945mJf269VP1dNVmPr5C+Zdbv1+G79PS8jfPDsNxJPtFYv9FYn2P9bYn1XP78kvJCJzaP/H8uvfSfrn9e5fS7Xff9OzwPUP9TvugXPa//3+fPzsj5trPH0hP/H9mf2fgv/aer5zfF6K80n7OZ/xfqv57L/n4uvWTiueOzOT8c9/u3a/f/j8h4Z3X/vOgX/SX0UuzMh91s1iOnH20e+U3/w+hT/j39aZqe3LN1epXyB/bP6v9l9BrrufvAI+O/3ZFh/2usr7dYX5VYr1I/e/0N1jdM/5rxn73/nKgfbebx/1L0iz1r+w8H3EOv:BCBD^FO736,128^GFA,13440,13440,00020,:Z64:eJzt2k2S2yAQBWAULVjqCByFo8lHIzchN3B2WrhEaCQn6tfPFc1fSnbEIkl9NYxlQTfQwbnjt+56/9fFmicWiRVrnlggVqx5YoFYseaJBWLFmicWiBVrPbFArFhbuha3taXrpGz5sbS1pevNWcvEnLWJWLK2/YS7ZWLO2kQsWZvdvp+jv2/zPv/YlVhhlonNxNTj3G1S1uHwyrjFZldlAxlz01nmSyQ2EOuILZ3B2BzviLXOaCy2OmLS2RiL6Y5Y7WyN5RKWc2huYjmM5bpNO5atKUJ939M+35xpz2p9shaIjcl5ncNqTCYXZ22+2gh5bSipU9mzrVupx1wXS/K4lo3cBrXUtDUvB5WNuclzRMinj2wE61e77DAyh8w+oq9fAc0X+ehhs4KI5a7MPVh6YB1a/Ri0y0fMl4kZPgu1oUwen28oV/y+KZTriO8glJ9FWV+mUeyirLYf77O2uH0382CXLQNp5p+1Nqlg7i6m53iUiQvxEWTSQxy1QNB7PdcCZruDWfaOV6f3f7LHTC6DRbM3q8vizRq257QjrSmvbM60ZzF2Dj3tq+1Ic/eVbfn7GGP+f9q2/TPzWLtxshmY0eQUn8BC0RWTe+0BzgZt8wNng6X0oA3LYev+pUD9ai1lZGWhGZ4hSrHnBWl2z2XPEPDQ3Nbyi90TWpvkebbWalXexKXD+sZS57LnBacOV20P7LAO4stSjkzvsuykbnQM+8j3sO+Fvz/2ntl42HHrZP7EXfPA2N65tnvusnnP4oMZiy0WgyxWWZy3B8SzBssbLL+wPOQ81l6dac9pR9oLvLI5+Y+Xi6kNf7b5nTYQi8RGa5KY0DyxGtQJLRKTEBy0ScLKYBKqGfYvEtKTzrFrHtJGxqPbP5azmAMbrd12Wn1inWOlNEIsBcix1S5Yd5T1Y4C8K+uMhxzbl5Y+s7a0lGCUXWTUnTJ5skHvr3r4361mJsNUS8SQqn0jZui00w5oR1pnXtnqHzWzmTPs4W2mFo0VaqO17/a9sHdFbHyLub9bfGAzWNhpchK4gcnKPxG7grVdA1jbXaBFrAG0D8bzgvzCbEy3jxlb8+h6ydbawgw738/naNh5PV9ao3dYmGViE7Hd91rYfR92L4jeH2L3jPSYr/u/vLV176jnn+l8P3NizHy6zZGYvddSY2gkNhAzd1gk/jA3iZGfM3diWgozZu/YlHkgNn71+2PjFuz4snnA5stiE7FMzFlj8zkTc9ZYHCViztrOO20sH7C8kazhdbhH+Qq7Psh/ht5k512S8y7JeZfkd14775Ic/C7Jma/OfHXmqzNf3e2r89WR2y+UIASM:C470^FO224,288^FO224^FWR0^CFU^FB930,0,0,C,0^FD" + time + "^FS^FO320^FWR0^CFV^FB930,0,0,C,0^FD" + date + "^FS^FO416^FWR0^CFV^FB930,0,0,C,0^FD" + destination +"^FS^FO560^A0,110,110^FWR0^FB1000,0,0,C,0^FD" + name +"^FS^FO30^A0,110,110^FWR0^FB930,0,0,C,0^FD" + dayWritten + "^FS^LRY^FO2,2^GB0,894,156^FS^LRN^PQ1,0,1,Y^XZ");
+	
+		})
+//end
+})   
+	}
+
+
+
+	
+	
+	if(action == 'signout'){
+		var url = 'csm?id=visitor_signout&table=x_sthc_security_ch_security_checkin_table&filter=check_out_timeISEMPTY%5Elocation=' + c.data.location;
+	top.window.location = url;
+}
+	
+	if(action == 'emp'){
+				swal({
+  title: 'Sign In',
+  html:
+    'Employee ID <input id="swal-input1" class="swal2-input">',
+  preConfirm: function () {
+    return new Promise(function (resolve) {
+      resolve([
+        $('#swal-input1').val()
+      ])
+   input1 = $('#swal-input1').val();
+		
+		})
+  },
+  onOpen: function () {
+    $('#swal-input1').focus()
+  }
+}).then(function () {
+	    c.data.ID = input1;	
+			c.data.action = action;
+			c.server.update();
+			setTimeout(function(){
+				if (c.data.check == 'true'){
+					swal('Thank you ','','success');
+					
+//start
+	var myprinter = '';
+
+		BrowserPrint.getDefaultDevice('printer', function(printer)	
+		{
+			
+		
+			c.server.update();
+			var name = c.data.name
+			var date = c.data.month + " " + c.data.day + " "+ c.data.year;
+			var time = c.data.time;
+			var dayWritten = c.data.dayWritten;
+			
+			//alert(printer.name);
+		  //alert($scope.data.dayWritten);
+			myprinter = printer;
+		  myprinter.send("^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ^XA^MMT^PW1200^LL0900^LS0^FO960,64^GFA,18432,18432,00024,:Z64:eJztm72S2zYQx8FRNEqnpMi45KNQeQN7xpqU9yKZodz6pYIbF04Xu1Bt1KlYuGAcigg++AFg/3s+XiQd747r8Q3089/gAlwssJAtxGJXs1yntvCFL3zhV+PStzKGi5eiN1b3cOa8mZk/i/9n7P+437/O9vt9yru4nc16eSx9Ys+JHwTklRArxNU4OxHfmUZJeRs5MPLGNjaUV7axolyFryvlgvKDa5WE+1YBePZ6dHTgxv2t/Z3yRmSlCRbAzZjqYWAB33Z/GPPaP2SV8sq5TrlyQ1Ukbj1hOY1/xysa/+6JNdU7zxvKtwzP79K3jL7tX9jAD/nD9Cl/rP7vHu+E+eTm33Hwvtx7rO7PmXjg4q3K7Egl5W4GDiCe7YBR/G/t9ID1srZ/CawvofG6EzcmBRFu08+fYF13rZLwA8OlbXD5B/CK4Vze4/KkaxaAG4eyEvBvQfdRnt+N6Tni37Ya8tCeHD++2btfKZe+Nfvzxrn0/UfIT4y+ZvQVoz/Qfar7RNa1NbSfWmvQunOPBfu7e+wa8rH7+PyM15cdbYH4p3H5JucleC7SzLprwzgNeBUs3/h8hc/tMug+zhsczxGvglNanMeCx0b5cAV59Ngwn4+TGfL4seH+Epw+o3jOGL5huNgZ+xVwZwyf/fo9lz6xp8hPv2F+CCIu4JXA61cJXL/Yxg3l3L7s9newj6vwtdyXg/zmWyXDi5QbN9eofjFJr2DqF3iOqpk6pfE/wPmtuGj9Ih9Uv4DzrfN8qV+m9n/x+oWrNx9Uv4C44uoXN1JUvxQaxe2d9QtcL9nk+uUE1m87tGJ+d51ywfrFOYTOV6GbIbeOFoB/YuqXIFvFeV7i85Ju/9CQh/bk+OefvaXcv975nzfOpTdWb0DeMFZtxivxlE/RX7p/xegF1tvLEKT/yugrRi+wvrW3qzTf2gS0Qnrl9JRL+7Lo/uvSg1Ykf5rufxAlzcOmXvhRFPS+yGSH38UvNK+ax9pHAL5huL2+pflWmh+Yu4yVE+6OSzSv2v1IIf4qLJfjfbMG/Nb2sMsJ/2A/1Zrwjzqygf/FcL3wabzwDekVIt2JO54N/Mx6k/9/ylz+j/XGWh/kycnAWMQX/aJ/hnrlP119PXL6v997Q/5rPN6YL/qr6i8dD5P1pYv/A9GXLv5vL6x/NzN/Fv+fkP8a+2+N0x+JXvc2j/xwaf0HRn/L6GWB9TJn9BmjH0qUNF9tob4aSqlY3wylezJe2beS+VF9R4m+6YugRN/2xVQ6n31H6fyr7rKO6v19EdF33xcQvb/io/rWD5nouzklevPkHOr9NSHVm4KzRHp/6Qj07t8XAf2J7i+Ou1tQoHf1PtK3E/Vc/4w/jX1lcLxbqJf+SwY6nxmcT3/tit5XDvUifI+jvotQoldM/HSBS+PTB/p945mJf269VP1dNVmPr5C+Zdbv1+G79PS8jfPDsNxJPtFYv9FYn2P9bYn1XP78kvJCJzaP/H8uvfSfrn9e5fS7Xff9OzwPUP9TvugXPa//3+fPzsj5trPH0hP/H9mf2fgv/aer5zfF6K80n7OZ/xfqv57L/n4uvWTiueOzOT8c9/u3a/f/j8h4Z3X/vOgX/SX0UuzMh91s1iOnH20e+U3/w+hT/j39aZqe3LN1epXyB/bP6v9l9BrrufvAI+O/3ZFh/2usr7dYX5VYr1I/e/0N1jdM/5rxn73/nKgfbebx/1L0iz1r+w8H3EOv:BCBD^FO736,224^GFA,08960,08960,00020,:Z64:eJzt2EFyozAQhWGpWGjpI3AU5mboaByFI1A1i2HhskaAF1G/34kGO2NmChZO5avEGNz91MK51x9+epc1aTviad9sk09ze9ppz1j+WWsfj/flyzPWmC46bYeNrrDlNc1qLdjlCnZTC6nWYpVd0Aaxzth2D45k8QlzdXYDu4JNYOPXf7e8Yr1QbRyoXtqzXrg2yGYwqpdBrXi7g60f+00nuNN2mM2S/up6myU5hCQ3cqEFU6c+v3+TrOVXqfvF4i4Lqw3GlvNay59PbJQ1KuQg7sW095+x2ozwD80V5iAj0Pok60wOWMmSHMQ6gwTNkrVknLF8klmsXAGOlRvnvvud5uQ4mjVQu63ZrW11f7XmoT8a09KLXaC3WshiMupf6vPKjKB8qbX62efmrIU0yfzHmU3ZTkbrwqut9rPQdej1NuvaE43V3dPateKvrB9kVLtL3Y/GGugF6iPqN+xL6l97/KlFtQDWFvZr/a3/aNtnKz/hNjFdwDo1X37n644sgLVgSc2G02ItWC8Wva2/bBe1sVObpCa3qamsobsNauV+ZuuOCSyqlSW0FlpZkZuVZ9hMntfZi/jk/fC85aU5/1NuQa4ruVXZOrng+9yJ2R4Lc/J93Gc9a/L9LjXegQUwD7b8s1gA82CmFx4/Z3BkHRj1L/V5cXzHHAH7c8o/mscpTyl3KZ8p26VSP5kZKuaIx8/I4i4LaU62DnLCJN3TDQnmiARrN5hLMAu82CIazBFwHXq9TU5Ue1+aNWX32ghzRJ25xWS2AOtHmC1GmCNGmCNG2K8OsF8ddPb2AzwP+wF96Uy4/wt7kjNLziw5s+T/zpKa4zfvOmjJ:D66F^FO224,288^FO224^FWR0^CFU^FB930,0,0,C,0^FD" + time + "^FS^FO320^FWR0^CFV^FB930,0,0,C,0^FD" + date +"^FS^FO560^A0,110,110^FWR0^FB1000,0,0,C,0^FD" + name +"^FS^FO30^A0,110,110^FWR0^FB930,0,0,C,0^FD" + dayWritten + "^FS^LRY^FO2,2^GB0,894,156^FS^LRN^PQ1,0,1,Y^XZ");
+		
+		})
+//end
+		
+				}
+				else{
+					swal('Employee Not Found ','Please Try Again','error');	
+				} 
+			
+			}, 600);
+			
+				
+})
+		
+		
+		
+		//window.open("csm?id=security_employee_checkin&sys_id=360ef8526f104300277218d22e3ee43a", "myWindow", 'width=800,height=600');		
+	}
+	
+	if(action == 'key'){
+		window.open("csm?id=security_employee_checkin&sys_id=9e56411a6f104300277218d22e3ee411", "myWindow", 'width=800,height=600');	
+	}
+	if(action == 'keyin'){
+		var url = 'csm?id=security_key_checkin&table=x_sthc_security_ch_key_table';
+		top.window.location = url;
+	}
+	if(action == 'package'){
+		var url = 'csm?id=security_package_pickup&table=security_package';
+		top.window.location = url;
+	}
+		if(action == 'newpackage'){
+		window.open("csm?id=security_package&sys_id=ff9d85da6f104300277218d22e3ee403", "myWindow", 'width=800,height=600');		
+	}
+	
+    
+
+
+
+}
+
+}    
+ 
+function getData(prefix,suffix,result){
+	var regExString = new RegExp("(?:"+prefix+")(.*?)(?:"+suffix+")", "ig");
+			var data = regExString.exec(result);
+	if(!data)alert("Invalid Drivers License Scan");
+			return data[1];
+	
+}
+
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* TOP ICON ---------- */
+
+a.top_icon {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+a.top_icon .fa {
+  display: block;
+  text-align: center;
+}
+
+a.top_icon h3 {
+  font-weight: 300;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+/* CIRCLE ICON ---------- */
+
+a.circle_icon {
+  display: block;
+  padding: 20px 0px 20px 70px;
+  position: relative;
+}
+
+a.circle_icon .fa {
+  position:absolute;
+  left: 0px;
+  top: 10px;
+}
+
+a.circle_icon h3 {
+  font-weight: 300;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+/* COLOR BOX ---------- */
+
+a.color_box {
+  display: block;
+  position: relative;
+  padding: 20px 20px 20px 82px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+a.color_box .fa {
+  position:absolute;
+  left: 20px;
+  top: 20px;
+  width:42px;
+  text-align: center;
+}
+
+a.color_box h3 {
+  font-weight: 300;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.icon-link-background-primary {
+  background-color: $brand-primary;
+}
+
+.icon-link-background-info {
+  background-color: $brand-info;
+}
+
+.icon-link-background-success {
+  background-color: $brand-success;
+}
+
+.icon-link-background-warning {
+  background-color: $brand-warning;
+}
+
+.icon-link-background-danger {
+  background-color: $brand-danger;
+}
+
+.icon-link-background-default {
+  background-color: $brand-primary;
+}</css>
+        <data_table>sp_instance_link</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,short_description,glyph,class_name,type,sc_category,url,kb_article,kb_topic,kb_category,sc_cat_item,sp_page,color</field_list>
+        <has_preview>true</has_preview>
+        <id>security-checkin</id>
+        <internal>false</internal>
+        <link/>
+        <name>Security Checkin</name>
+        <option_schema>[{"name":"link_template","label":"Template","type":"choice","choices":[{"label":"Top Icon","value":"Top Icon"},{"label":"Circle Icon","value":"Circle Icon"},{"label":"Color Box","value":"Color Box"}]}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  
+	var location = gs.action.getGlideURI().get('location')
+if(!location)
+	location = '61e9c2956fad6940e59533d9ea3ee46c';
+	data.location = location;
+	
+
+	var gdt = new GlideDate();
+	var month1 = gdt.getByFormat("MMMM");
+	var year1 = gdt.getByFormat("YYYY");
+	var day1 = gdt.getByFormat("dd");
+	var day2 = gdt.getDayOfWeekLocalTime();
+	var time1 = new GlideDateTime().getLocalTime().getByFormat('hh:mm a');
+	
+	switch (day2){
+		case 1:
+			data.dayWritten = "MONDAY";
+			break;
+			case 2:
+			data.dayWritten = "TUESDAY";
+			break;
+			case 3:
+			data.dayWritten = "WEDNESDAY";
+			break;
+			case 4:
+			data.dayWritten = "THURSDAY";
+			break;
+			case 5:
+			data.dayWritten = "FRIDAY";
+			break;
+			case 6:
+			data.dayWritten = "SATURDAY";
+			break;
+			case 7:
+			data.dayWritten = "SUNDAY";
+			break;
+	}
+	data.month = month1;
+	data.year = year1;
+	data.day = day1;
+	data.time = time1;
+	
+	//show signin button
+  data.showButton1 = true;
+	
+	//show signin button
+  data.showButton1 = true;
+
+  // if (input && input.action && action == 'close') {
+  if (input) {  
+  var action = input.action;  
+		var first = input.first;
+		var last = input.last
+		var visit = input.visit
+		var badge = input.badge;
+		//var resultText = input.resultText;
+		var ID = input.ID;
+		var driversLicenseNumber = input.DLN;
+		var expiration = input.EXP;
+		var raw = input.result;
+    
+	if (first){
+		var visitor = new GlideRecord('x_sthc_security_ch_security_checkin_table');
+		visitor.initialize();
+		visitor.first_name = first;
+		visitor.last_name = last;
+		visitor.visiting = visit;
+		visitor.badge_number = badge;
+		visitor.check_in_time = new GlideDateTime().getDisplayValue();
+		visitor.setValue('location',location);
+		if (driversLicenseNumber) visitor.drivers_license_number = driversLicenseNumber;
+		if(raw) visitor.raw_data = raw.toString();
+		visitor.insert();
+		first = '';
+	}
+		if(ID){
+			var emp = input.ID;
+			//data.test = emp;
+			var user = new GlideRecord('sys_user');
+			user.addQuery('employee_number',emp);
+			user.addActiveQuery();
+			user.query();
+			if (user.next()){
+				data.check = 'true';
+				data.name = user.name.getDisplayValue();
+				
+				var user_set = new GlideRecord('x_sthc_security_ch_emp');
+				user_set.initialize();
+				user_set.employee = user.sys_id;
+				user_set.insert();
+				ID = '';
+			}
+			else{
+				data.check = 'false';
+			}
+			
+		}
+		clearData();
+	}
+})();  
+
+
+function clearData(){
+	data.first = '';
+	data.last = '';
+	data.visit = '';
+	data.ID = '';
+	data.badge = '';
+	data.expiration = '';
+	data.raw = '';
+	data.DLN = '';
+	data.EXP = '';
+	input.result = '';
+	
+}]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-07-29 03:52:35</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>fc762d3c6fd0830061f06ea22e3ee45f</sys_id>
+        <sys_mod_count>253</sys_mod_count>
+        <sys_name>Security Checkin</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_widget_fc762d3c6fd0830061f06ea22e3ee45f</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2019-02-26 20:11:18</sys_updated_on>
+        <template><![CDATA[     <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('scan')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Drivers License Scan</h3>
+    <span>Scan a drivers license and print a vistor badge</span>
+  </a>
+  </div>
+
+
+  <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('signin')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Visitor Sign-in</h3>
+    <span>All visitors must sign-in!</span>
+  </a>
+  </div>
+  
+   <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('signout')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Visitor Sign-out</h3>
+    <span>Checked in vistors can check out here.</span>
+  </a>
+  </div>
+  
+    <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('emp')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Employee Sign-in</h3>
+    <span>Did you forget your badge? Sign-in here.</span>
+      
+  </a>
+  </div>
+  <!--
+   <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('key')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Check out a key</h3>
+    <span>Need a key for a locked room? check one out here.</span>
+  </a>
+  </div>
+
+ <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('keyin')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Check in a key</h3>
+    <span>Need to return a key? click here.</span>
+  </a>
+  </div>
+  
+   <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('package')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{ ::options.class_name}}"></div>
+    <h3>Pick up a package</h3>
+    <span>Was your package delivered? Sign-out you packages here.</span>
+  </a>
+  </div>
+
+ <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('newpackage')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Document package delivery</h3>
+    <span>Document package deliveries here. </span>
+  </a>
+  </div>
+  -->
+
+
+     
+]]></template>
+    </sp_widget>
+</record_update>

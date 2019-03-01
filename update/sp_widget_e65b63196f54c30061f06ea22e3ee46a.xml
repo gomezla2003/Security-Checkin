@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $location, spUtil, $timeout){
+	var c = this;
+	if ($scope.data.dataTableWidget)
+		angular.extend($scope.data.dataTableWidget.options, $scope.options);
+	
+	$scope.$on('data_table.click', function(e, parms){
+		
+		
+		swal({
+  title: 'Are you sure?',
+  text: "Are you ready to sign out?",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, Sign-out'
+}).then(function () {
+			
+  swal({
+  title: 'You have been signed out',
+  text: 'Thank you for visiting',
+  timer: 5000,
+	showConfirmButton: false,
+	type: 'success'
+}).then(
+  function () {},
+  // handling the promise rejection
+  function (dismiss) {
+    if (dismiss === 'timer') {
+      console.log('I was closed by the timer')
+    }
+		
+			var id = parms.sys_id;
+		c.data.id = id;
+		c.server.update().then(function() {    
+         c.data.id = undefined;
+			window.location.href = "csm?id=security_checkin";
+			
+		});
+		
+  }
+)
+	
+			
+			
+    }); 
+	
+	
+	
+})
+		
+		
+	   
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget-data-table .clearfix{&#13;
+	display: none;&#13;
+}</css>
+        <data_table>sp_instance_table</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,maximum_entries,glyph,color,sp_page,field_list</field_list>
+        <has_preview>false</has_preview>
+        <id>data-table-from-url-definition--visitor-</id>
+        <internal>false</internal>
+        <link/>
+        <name>Data Table from URL Definition (Visitor)</name>
+        <option_schema>[{"hint":"Show Instance option title instead of the table's plural label","name":"use_instance_title","label":"Use Instance Title","type":"boolean"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	//deleteOptions(['table','field_list','filter','order_by', 'order_direction','order']);
+
+	if (input) {
+		data.table = input.table;
+		data.view = input.view;
+		data.sys = input.id;
+
+		
+		var s = new GlideRecord('x_sthc_security_ch_security_checkin_table');
+		s.get(input.id);
+		s.check_out_time =  new GlideDateTime().getDisplayValue();
+		s.update();
+		
+
+		
+		
+		
+	} else {
+		data.table = $sp.getParameter('table') || $sp.getParameter('t');
+		data.view = $sp.getParameter('view');
+		data.fields = $sp.getParameter('fields');
+		data.sys_id = $sp.getParameter('sys_id');
+		data.first = $sp.getParameter('first_name');
+		
+		
+		
+	}
+	
+	data.dataTableWidget = $sp.getWidget('widget-data-table', data);
+
+
+})()]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-07-31 02:50:13</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>e65b63196f54c30061f06ea22e3ee46a</sys_id>
+        <sys_mod_count>200</sys_mod_count>
+        <sys_name>Data Table from URL Definition (Visitor)</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_widget_e65b63196f54c30061f06ea22e3ee46a</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-10-29 17:35:34</sys_updated_on>
+        <template><![CDATA[
+
+<div>
+  <div ng-if="data.invalid_table">
+    <div class="alert alert-info">
+      <span ng-if="data.table_label">${Table not defined} '{{data.table_label}}'</span>
+      <span ng-if="!data.table_label">${Select table on field below or specify on URL} ?id=list&amp;table=table_name</span>
+    </div>
+    <sn-record-picker field="selectedTable" table="'sys_db_object'" 
+                      display-field="'label'" 
+                      value-field="'name'" 
+                      display-fields="'name'" 
+                      search-fields="'label,name'" page-size="100"  
+                      ng-click="c.uiAction('signin')"></sn-record-picker>
+  </div>
+  <div ng-if="data.dataTableWidget && !data.invalid_table" ng-click="c.uiAction('click')">
+  	<sp-widget widget="data.dataTableWidget" ng-click="c.uiAction('signin')"></sp-widget>
+  </div>  
+</div>]]></template>
+    </sp_widget>
+</record_update>
