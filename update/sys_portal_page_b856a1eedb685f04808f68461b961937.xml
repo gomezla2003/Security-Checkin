@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2019-03-01 21:55:53">
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2019-03-01 21:58:32">
     <sys_portal_page action="INSERT_OR_UPDATE">
         <layout/>
         <order/>
@@ -180,11 +180,11 @@
                         <name>is_using_database_view</name>
                         <portal_section display_value="Created 03-02-2018 13:48:37">4666edeedb685f04808f68461b9619d0</portal_section>
                         <sys_created_by>system</sys_created_by>
-                        <sys_created_on>2018-12-21 19:01:22</sys_created_on>
-                        <sys_id>29419b0ddb22230040f8fcfa0c9619d6</sys_id>
+                        <sys_created_on>2019-01-05 13:09:25</sys_created_on>
+                        <sys_id>1490d37ddb322300a1dd7d8bbf9619f0</sys_id>
                         <sys_mod_count>0</sys_mod_count>
                         <sys_updated_by>system</sys_updated_by>
-                        <sys_updated_on>2018-12-21 19:01:22</sys_updated_on>
+                        <sys_updated_on>2019-01-05 13:09:25</sys_updated_on>
                         <value>false</value>
                     </sys_portal_preferences>
                     <sys_portal_preferences action="INSERT_OR_UPDATE">
@@ -369,6 +369,17 @@
                         <value>true</value>
                     </sys_portal_preferences>
                     <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>is_using_database_view</name>
+                        <portal_section display_value="Created 03-02-2018 13:48:43">63666deedb685f04808f68461b96194e</portal_section>
+                        <sys_created_by>system</sys_created_by>
+                        <sys_created_on>2019-01-05 13:09:26</sys_created_on>
+                        <sys_id>5090177ddb322300a1dd7d8bbf961912</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>system</sys_updated_by>
+                        <sys_updated_on>2019-01-05 13:09:26</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
                         <name>sys_id</name>
                         <portal_section display_value="Created 03-02-2018 13:48:43">63666deedb685f04808f68461b96194e</portal_section>
                         <sys_created_by>LGOMEZ</sys_created_by>
@@ -411,17 +422,6 @@
                         <sys_updated_by>LGOMEZ</sys_updated_by>
                         <sys_updated_on>2018-03-02 20:48:43</sys_updated_on>
                         <value>com.glide.ui.portal.RenderReport</value>
-                    </sys_portal_preferences>
-                    <sys_portal_preferences action="INSERT_OR_UPDATE">
-                        <name>is_using_database_view</name>
-                        <portal_section display_value="Created 03-02-2018 13:48:43">63666deedb685f04808f68461b96194e</portal_section>
-                        <sys_created_by>system</sys_created_by>
-                        <sys_created_on>2018-12-21 19:01:22</sys_created_on>
-                        <sys_id>ad419b0ddb22230040f8fcfa0c9619eb</sys_id>
-                        <sys_mod_count>0</sys_mod_count>
-                        <sys_updated_by>system</sys_updated_by>
-                        <sys_updated_on>2018-12-21 19:01:22</sys_updated_on>
-                        <value>false</value>
                     </sys_portal_preferences>
                     <sys_portal_preferences action="INSERT_OR_UPDATE">
                         <name>show_border</name>
@@ -868,6 +868,17 @@
                         <value>report_widget_description</value>
                     </sys_portal_preferences>
                     <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>is_using_database_view</name>
+                        <portal_section display_value="Created 03-02-2018 13:48:40">ba662deedb685f04808f68461b9619d0</portal_section>
+                        <sys_created_by>system</sys_created_by>
+                        <sys_created_on>2019-01-05 13:09:24</sys_created_on>
+                        <sys_id>bb80d37ddb322300a1dd7d8bbf9619a2</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>system</sys_updated_by>
+                        <sys_updated_on>2019-01-05 13:09:24</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
                         <name>sys_id</name>
                         <portal_section display_value="Created 03-02-2018 13:48:40">ba662deedb685f04808f68461b9619d0</portal_section>
                         <sys_created_by>LGOMEZ</sys_created_by>
@@ -877,17 +888,6 @@
                         <sys_updated_by>LGOMEZ</sys_updated_by>
                         <sys_updated_on>2018-03-02 20:48:40</sys_updated_on>
                         <value>b8c4adeedb285f04808f68461b96198e</value>
-                    </sys_portal_preferences>
-                    <sys_portal_preferences action="INSERT_OR_UPDATE">
-                        <name>is_using_database_view</name>
-                        <portal_section display_value="Created 03-02-2018 13:48:40">ba662deedb685f04808f68461b9619d0</portal_section>
-                        <sys_created_by>system</sys_created_by>
-                        <sys_created_on>2018-12-21 19:01:21</sys_created_on>
-                        <sys_id>d1419b0ddb22230040f8fcfa0c961988</sys_id>
-                        <sys_mod_count>0</sys_mod_count>
-                        <sys_updated_by>system</sys_updated_by>
-                        <sys_updated_on>2018-12-21 19:01:21</sys_updated_on>
-                        <value>false</value>
                     </sys_portal_preferences>
                     <sys_portal_preferences action="INSERT_OR_UPDATE">
                         <name>renderer</name>
