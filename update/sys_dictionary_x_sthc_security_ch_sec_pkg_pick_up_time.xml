@@ -54,7 +54,7 @@
         <sys_created_by>LGOMEZ</sys_created_by>
         <sys_created_on>2017-08-02 17:54:01</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
-        <sys_id>0f2d8d9a6f104300277218d22e3ee4e2</sys_id>
+        <sys_id>bb3d9c33dbb72f8096b17d8bbf96195d</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Pick-up time</sys_name>
         <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
@@ -62,8 +62,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
         <sys_update_name>sys_dictionary_x_sthc_security_ch_sec_pkg_pick_up_time</sys_update_name>
-        <sys_updated_by>LGOMEZ</sys_updated_by>
-        <sys_updated_on>2017-08-02 17:54:01</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2019-03-01 22:16:44</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

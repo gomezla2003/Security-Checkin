@@ -54,16 +54,16 @@
         <sys_created_by>LGOMEZ</sys_created_by>
         <sys_created_on>2018-06-25 20:16:22</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>92bda5e3dbfe9f8040f8fcfa0c9619b4</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_id>a84ddc33dbb72f8096b17d8bbf96193a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Location</sys_name>
         <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
         <sys_update_name>sys_dictionary_x_sthc_security_ch_security_checkin_table_location</sys_update_name>
-        <sys_updated_by>SHollien</sys_updated_by>
-        <sys_updated_on>2018-10-30 18:34:02</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2019-03-01 22:16:47</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
