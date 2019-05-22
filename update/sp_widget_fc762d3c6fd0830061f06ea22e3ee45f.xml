@@ -9,14 +9,15 @@
 	var input4 = '';
 	var DLScan = '';
 	
-	 document.addEventListener('keydown', function(event) {
-    if( event.keyCode == 13 || event.keyCode == 17 || event.keyCode == 74 )
-      event.preventDefault();
-  });
+
 	
 c.uiAction = function(action) {
 	
 	if(action == 'scan'){
+			 document.addEventListener('keydown', function(event) {
+    if(event.ctrlKey && event.keyCode == 74 )
+      event.preventDefault();
+  });
 		swal({
 			title: 'Scan Drivers License',
 			html:
@@ -74,7 +75,7 @@ c.uiAction = function(action) {
 			//alert(printer.name);
 		  //alert($scope.data.dayWritten);
 			myprinter = printer;
-		  //myprinter.send("^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ^XA^MMT^PW1200^LL0900^LS0^FO960,64^GFA,18432,18432,00024,:Z64:eJztm72S2zYQx8FRNEqnpMi45KNQeQN7xpqU9yKZodz6pYIbF04Xu1Bt1KlYuGAcigg++AFg/3s+XiQd747r8Q3089/gAlwssJAtxGJXs1yntvCFL3zhV+PStzKGi5eiN1b3cOa8mZk/i/9n7P+437/O9vt9yru4nc16eSx9Ys+JHwTklRArxNU4OxHfmUZJeRs5MPLGNjaUV7axolyFryvlgvKDa5WE+1YBePZ6dHTgxv2t/Z3yRmSlCRbAzZjqYWAB33Z/GPPaP2SV8sq5TrlyQ1Ukbj1hOY1/xysa/+6JNdU7zxvKtwzP79K3jL7tX9jAD/nD9Cl/rP7vHu+E+eTm33Hwvtx7rO7PmXjg4q3K7Egl5W4GDiCe7YBR/G/t9ID1srZ/CawvofG6EzcmBRFu08+fYF13rZLwA8OlbXD5B/CK4Vze4/KkaxaAG4eyEvBvQfdRnt+N6Tni37Ya8tCeHD++2btfKZe+Nfvzxrn0/UfIT4y+ZvQVoz/Qfar7RNa1NbSfWmvQunOPBfu7e+wa8rH7+PyM15cdbYH4p3H5JucleC7SzLprwzgNeBUs3/h8hc/tMug+zhsczxGvglNanMeCx0b5cAV59Ngwn4+TGfL4seH+Epw+o3jOGL5huNgZ+xVwZwyf/fo9lz6xp8hPv2F+CCIu4JXA61cJXL/Yxg3l3L7s9newj6vwtdyXg/zmWyXDi5QbN9eofjFJr2DqF3iOqpk6pfE/wPmtuGj9Ih9Uv4DzrfN8qV+m9n/x+oWrNx9Uv4C44uoXN1JUvxQaxe2d9QtcL9nk+uUE1m87tGJ+d51ywfrFOYTOV6GbIbeOFoB/YuqXIFvFeV7i85Ju/9CQh/bk+OefvaXcv975nzfOpTdWb0DeMFZtxivxlE/RX7p/xegF1tvLEKT/yugrRi+wvrW3qzTf2gS0Qnrl9JRL+7Lo/uvSg1Ykf5rufxAlzcOmXvhRFPS+yGSH38UvNK+ax9pHAL5huL2+pflWmh+Yu4yVE+6OSzSv2v1IIf4qLJfjfbMG/Nb2sMsJ/2A/1Zrwjzqygf/FcL3wabzwDekVIt2JO54N/Mx6k/9/ylz+j/XGWh/kycnAWMQX/aJ/hnrlP119PXL6v997Q/5rPN6YL/qr6i8dD5P1pYv/A9GXLv5vL6x/NzN/Fv+fkP8a+2+N0x+JXvc2j/xwaf0HRn/L6GWB9TJn9BmjH0qUNF9tob4aSqlY3wylezJe2beS+VF9R4m+6YugRN/2xVQ6n31H6fyr7rKO6v19EdF33xcQvb/io/rWD5nouzklevPkHOr9NSHVm4KzRHp/6Qj07t8XAf2J7i+Ou1tQoHf1PtK3E/Vc/4w/jX1lcLxbqJf+SwY6nxmcT3/tit5XDvUifI+jvotQoldM/HSBS+PTB/p945mJf269VP1dNVmPr5C+Zdbv1+G79PS8jfPDsNxJPtFYv9FYn2P9bYn1XP78kvJCJzaP/H8uvfSfrn9e5fS7Xff9OzwPUP9TvugXPa//3+fPzsj5trPH0hP/H9mf2fgv/aer5zfF6K80n7OZ/xfqv57L/n4uvWTiueOzOT8c9/u3a/f/j8h4Z3X/vOgX/SX0UuzMh91s1iOnH20e+U3/w+hT/j39aZqe3LN1epXyB/bP6v9l9BrrufvAI+O/3ZFh/2usr7dYX5VYr1I/e/0N1jdM/5rxn73/nKgfbebx/1L0iz1r+w8H3EOv:BCBD^FO736,128^GFA,13440,13440,00020,:Z64:eJzt2k2S2yAQBWAULVjqCByFo8lHIzchN3B2WrhEaCQn6tfPFc1fSnbEIkl9NYxlQTfQwbnjt+56/9fFmicWiRVrnlggVqx5YoFYseaJBWLFmicWiBVrPbFArFhbuha3taXrpGz5sbS1pevNWcvEnLWJWLK2/YS7ZWLO2kQsWZvdvp+jv2/zPv/YlVhhlonNxNTj3G1S1uHwyrjFZldlAxlz01nmSyQ2EOuILZ3B2BzviLXOaCy2OmLS2RiL6Y5Y7WyN5RKWc2huYjmM5bpNO5atKUJ939M+35xpz2p9shaIjcl5ncNqTCYXZ22+2gh5bSipU9mzrVupx1wXS/K4lo3cBrXUtDUvB5WNuclzRMinj2wE61e77DAyh8w+oq9fAc0X+ehhs4KI5a7MPVh6YB1a/Ri0y0fMl4kZPgu1oUwen28oV/y+KZTriO8glJ9FWV+mUeyirLYf77O2uH0382CXLQNp5p+1Nqlg7i6m53iUiQvxEWTSQxy1QNB7PdcCZruDWfaOV6f3f7LHTC6DRbM3q8vizRq257QjrSmvbM60ZzF2Dj3tq+1Ic/eVbfn7GGP+f9q2/TPzWLtxshmY0eQUn8BC0RWTe+0BzgZt8wNng6X0oA3LYev+pUD9ai1lZGWhGZ4hSrHnBWl2z2XPEPDQ3Nbyi90TWpvkebbWalXexKXD+sZS57LnBacOV20P7LAO4stSjkzvsuykbnQM+8j3sO+Fvz/2ntl42HHrZP7EXfPA2N65tnvusnnP4oMZiy0WgyxWWZy3B8SzBssbLL+wPOQ81l6dac9pR9oLvLI5+Y+Xi6kNf7b5nTYQi8RGa5KY0DyxGtQJLRKTEBy0ScLKYBKqGfYvEtKTzrFrHtJGxqPbP5azmAMbrd12Wn1inWOlNEIsBcix1S5Yd5T1Y4C8K+uMhxzbl5Y+s7a0lGCUXWTUnTJ5skHvr3r4361mJsNUS8SQqn0jZui00w5oR1pnXtnqHzWzmTPs4W2mFo0VaqO17/a9sHdFbHyLub9bfGAzWNhpchK4gcnKPxG7grVdA1jbXaBFrAG0D8bzgvzCbEy3jxlb8+h6ydbawgw738/naNh5PV9ao3dYmGViE7Hd91rYfR92L4jeH2L3jPSYr/u/vLV176jnn+l8P3NizHy6zZGYvddSY2gkNhAzd1gk/jA3iZGfM3diWgozZu/YlHkgNn71+2PjFuz4snnA5stiE7FMzFlj8zkTc9ZYHCViztrOO20sH7C8kazhdbhH+Qq7Psh/ht5k512S8y7JeZfkd14775Ic/C7Jma/OfHXmqzNf3e2r89WR2y+UIASM:C470^FO224,288^FO224^FWR0^CFU^FB930,0,0,C,0^FD" + time + "^FS^FO320^FWR0^CFV^FB930,0,0,C,0^FD" + date + "^FS^FO416^FWR0^CFV^FB930,0,0,C,0^FD" + destination +"^FS^FO560^A0,110,110^FWR0^FB1000,0,0,C,0^FD" + name +"^FS^FO30^A0,110,110^FWR0^FB930,0,0,C,0^FD" + dayWritten + "^FS^LRY^FO2,2^GB0,894,156^FS^LRN^PQ1,0,1,Y^XZ");
+		 myprinter.send("^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ^XA^MMT^PW1200^LL0900^LS0^FO960,64^GFA,18432,18432,00024,:Z64:eJztm72S2zYQx8FRNEqnpMi45KNQeQN7xpqU9yKZodz6pYIbF04Xu1Bt1KlYuGAcigg++AFg/3s+XiQd747r8Q3089/gAlwssJAtxGJXs1yntvCFL3zhV+PStzKGi5eiN1b3cOa8mZk/i/9n7P+437/O9vt9yru4nc16eSx9Ys+JHwTklRArxNU4OxHfmUZJeRs5MPLGNjaUV7axolyFryvlgvKDa5WE+1YBePZ6dHTgxv2t/Z3yRmSlCRbAzZjqYWAB33Z/GPPaP2SV8sq5TrlyQ1Ukbj1hOY1/xysa/+6JNdU7zxvKtwzP79K3jL7tX9jAD/nD9Cl/rP7vHu+E+eTm33Hwvtx7rO7PmXjg4q3K7Egl5W4GDiCe7YBR/G/t9ID1srZ/CawvofG6EzcmBRFu08+fYF13rZLwA8OlbXD5B/CK4Vze4/KkaxaAG4eyEvBvQfdRnt+N6Tni37Ya8tCeHD++2btfKZe+Nfvzxrn0/UfIT4y+ZvQVoz/Qfar7RNa1NbSfWmvQunOPBfu7e+wa8rH7+PyM15cdbYH4p3H5JucleC7SzLprwzgNeBUs3/h8hc/tMug+zhsczxGvglNanMeCx0b5cAV59Ngwn4+TGfL4seH+Epw+o3jOGL5huNgZ+xVwZwyf/fo9lz6xp8hPv2F+CCIu4JXA61cJXL/Yxg3l3L7s9newj6vwtdyXg/zmWyXDi5QbN9eofjFJr2DqF3iOqpk6pfE/wPmtuGj9Ih9Uv4DzrfN8qV+m9n/x+oWrNx9Uv4C44uoXN1JUvxQaxe2d9QtcL9nk+uUE1m87tGJ+d51ywfrFOYTOV6GbIbeOFoB/YuqXIFvFeV7i85Ju/9CQh/bk+OefvaXcv975nzfOpTdWb0DeMFZtxivxlE/RX7p/xegF1tvLEKT/yugrRi+wvrW3qzTf2gS0Qnrl9JRL+7Lo/uvSg1Ykf5rufxAlzcOmXvhRFPS+yGSH38UvNK+ax9pHAL5huL2+pflWmh+Yu4yVE+6OSzSv2v1IIf4qLJfjfbMG/Nb2sMsJ/2A/1Zrwjzqygf/FcL3wabzwDekVIt2JO54N/Mx6k/9/ylz+j/XGWh/kycnAWMQX/aJ/hnrlP119PXL6v997Q/5rPN6YL/qr6i8dD5P1pYv/A9GXLv5vL6x/NzN/Fv+fkP8a+2+N0x+JXvc2j/xwaf0HRn/L6GWB9TJn9BmjH0qUNF9tob4aSqlY3wylezJe2beS+VF9R4m+6YugRN/2xVQ6n31H6fyr7rKO6v19EdF33xcQvb/io/rWD5nouzklevPkHOr9NSHVm4KzRHp/6Qj07t8XAf2J7i+Ou1tQoHf1PtK3E/Vc/4w/jX1lcLxbqJf+SwY6nxmcT3/tit5XDvUifI+jvotQoldM/HSBS+PTB/p945mJf269VP1dNVmPr5C+Zdbv1+G79PS8jfPDsNxJPtFYv9FYn2P9bYn1XP78kvJCJzaP/H8uvfSfrn9e5fS7Xff9OzwPUP9TvugXPa//3+fPzsj5trPH0hP/H9mf2fgv/aer5zfF6K80n7OZ/xfqv57L/n4uvWTiueOzOT8c9/u3a/f/j8h4Z3X/vOgX/SX0UuzMh91s1iOnH20e+U3/w+hT/j39aZqe3LN1epXyB/bP6v9l9BrrufvAI+O/3ZFh/2usr7dYX5VYr1I/e/0N1jdM/5rxn73/nKgfbebx/1L0iz1r+w8H3EOv:BCBD^FO736,128^GFA,13440,13440,00020,:Z64:eJzt2k2S2yAQBWAULVjqCByFo8lHIzchN3B2WrhEaCQn6tfPFc1fSnbEIkl9NYxlQTfQwbnjt+56/9fFmicWiRVrnlggVqx5YoFYseaJBWLFmicWiBVrPbFArFhbuha3taXrpGz5sbS1pevNWcvEnLWJWLK2/YS7ZWLO2kQsWZvdvp+jv2/zPv/YlVhhlonNxNTj3G1S1uHwyrjFZldlAxlz01nmSyQ2EOuILZ3B2BzviLXOaCy2OmLS2RiL6Y5Y7WyN5RKWc2huYjmM5bpNO5atKUJ939M+35xpz2p9shaIjcl5ncNqTCYXZ22+2gh5bSipU9mzrVupx1wXS/K4lo3cBrXUtDUvB5WNuclzRMinj2wE61e77DAyh8w+oq9fAc0X+ehhs4KI5a7MPVh6YB1a/Ri0y0fMl4kZPgu1oUwen28oV/y+KZTriO8glJ9FWV+mUeyirLYf77O2uH0382CXLQNp5p+1Nqlg7i6m53iUiQvxEWTSQxy1QNB7PdcCZruDWfaOV6f3f7LHTC6DRbM3q8vizRq257QjrSmvbM60ZzF2Dj3tq+1Ic/eVbfn7GGP+f9q2/TPzWLtxshmY0eQUn8BC0RWTe+0BzgZt8wNng6X0oA3LYev+pUD9ai1lZGWhGZ4hSrHnBWl2z2XPEPDQ3Nbyi90TWpvkebbWalXexKXD+sZS57LnBacOV20P7LAO4stSjkzvsuykbnQM+8j3sO+Fvz/2ntl42HHrZP7EXfPA2N65tnvusnnP4oMZiy0WgyxWWZy3B8SzBssbLL+wPOQ81l6dac9pR9oLvLI5+Y+Xi6kNf7b5nTYQi8RGa5KY0DyxGtQJLRKTEBy0ScLKYBKqGfYvEtKTzrFrHtJGxqPbP5azmAMbrd12Wn1inWOlNEIsBcix1S5Yd5T1Y4C8K+uMhxzbl5Y+s7a0lGCUXWTUnTJ5skHvr3r4361mJsNUS8SQqn0jZui00w5oR1pnXtnqHzWzmTPs4W2mFo0VaqO17/a9sHdFbHyLub9bfGAzWNhpchK4gcnKPxG7grVdA1jbXaBFrAG0D8bzgvzCbEy3jxlb8+h6ydbawgw738/naNh5PV9ao3dYmGViE7Hd91rYfR92L4jeH2L3jPSYr/u/vLV176jnn+l8P3NizHy6zZGYvddSY2gkNhAzd1gk/jA3iZGfM3diWgozZu/YlHkgNn71+2PjFuz4snnA5stiE7FMzFlj8zkTc9ZYHCViztrOO20sH7C8kazhdbhH+Qq7Psh/ht5k512S8y7JeZfkd14775Ic/C7Jma/OfHXmqzNf3e2r89WR2y+UIASM:C470^FO224,288^FO224^FWR0^CFU^FB930,0,0,C,0^FD" + time + "^FS^FO320^FWR0^CFV^FB930,0,0,C,0^FD" + date + "^FS^FO416^FWR0^CFV^FB930,0,0,C,0^FD" + destination +"^FS^FO560^A0,110,110^FWR0^FB1000,0,0,C,0^FD" + name +"^FS^FO30^A0,110,110^FWR0^FB930,0,0,C,0^FD" + dayWritten + "^FS^LRY^FO2,2^GB0,894,156^FS^LRN^PQ1,0,1,Y^XZ");
 	
 		})
 //end
@@ -148,6 +149,60 @@ c.uiAction = function(action) {
 
 
 
+	
+		if(action == 'provider'){
+		swal({
+  title: 'Sign In',
+  html:
+    'First Name<input id="swal-input1" class="swal2-input">' +
+    'Last Name<input id="swal-input2" class="swal2-input">',
+  preConfirm: function () {
+    return new Promise(function (resolve) {
+      resolve([
+        $('#swal-input1').val(),
+        $('#swal-input2').val()
+      ])
+   input1 = $('#swal-input1').val();
+	 input2 = $('#swal-input2').val();
+		
+		})
+  },
+  onOpen: function () {
+    $('#swal-input1').focus()
+  }
+}).then(function (result) {
+  //swal(JSON.stringify(result))
+	swal(
+  'Thank you ' + $('#swal-input1').val() + " " + $('#swal-input2').val(),
+  'success'
+)
+//start
+	var myprinter = '';
+
+		BrowserPrint.getDefaultDevice('printer', function(printer)	
+		{
+			//alert("test");
+			c.data.firstP = input1;
+			c.data.lastP = input2;
+			c.data.action = action;
+			c.server.update();
+			var name = c.data.firstP + " " + c.data.lastP;
+			var date = c.data.month + " " + c.data.day + " "+ c.data.year;
+			var time = c.data.time;
+			var dayWritten = c.data.dayWritten;
+			
+			//alert(printer.name);
+		  //alert($scope.data.dayWritten);
+			myprinter = printer;
+		  myprinter.send("^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ^XA^MMT^PW1200^LL0900^LS0^FO448,192^GFA,08192,08192,00016,:Z64:eJzt2LFym0AQBuC9IR6KFMiVSh6FPIJTaFzqFdKlhEfxm4RHSONej0DhTCgQmzsQd7s/kpBGjpFnuMIz38iSjmV3WR3RBy9T/W+bTb8GR9yvYvEQH95vtt72DzeU3pXbkTNlply7AL+yNivnl5gudwZOLdsJN8KJdS0cW1fCEdhYl8JuQ4V0ynuSjoa3D/WyWWn7Nb+X+p2s32d+fZb5GnERv6djcAJOwRk417bpqry22Sudgm02l4kwa3fVIfqDq55K9Iet9V7UM8bvwnhTcIvOz7sB15mo/6jbfah/6x3YXq2yu+QqeO8agnDlIlwGly6EFGyvLKmDXWswT8HDS4N/gwswadP1Nivtr/wibXLfvjpH/u74fFH9zEaXa2EX/SbYiNs55I/sn7133mnn6qSzow79O+8c+nufTu0pm+Nm4Zp+qXwq3Z6F+xLzdl+dn7HbaqiXmPuSLk/ahSa5I0/tt7++wXi943i0EL8+voO7+GfqfvBffX/U/Zq636P8yCF/MJ+m8jGB/MX8jkR7O1YPo/rB+orDxx2tT6xfoi+kTbf70Ia81+BM+4G1E3CuHbH2GpxpG9ZOwFttw9prcKZtWDsB59qHBPTuPp3ffPwynQ/9v4f5MJLp5P1N2z8jDn7Sbkn7DVxoh5d7v4BJuy3g9Qrcgv3uB9dgRu/ADVg8fwzEi2R5h/osvSOoZ5PrfnF4Q+H9AB79fsH8icDdNwh33yC9BhN6y+frw0D96N9n1I2QyoROwVjfhrTpozz3fH/vNo/9eq9435vnju/9+/AT8K4t5z2c/5xxHg42MB8amA+Ne7zEav6rcD585dE8OOWp+TA4O+rT8+LN86HYHg3zopwPk/Dx/vlFwvYNO+XH76Qs1vxezp+m/GfD+62sN8N1uvgT+eePa/vpsNzzf6VMas3vpX7P+/OfH8fL+fFN58fN6PyYrj4/XgXfdH68rFnXP0sGKK0=:A441^FO960,32^GFA,24192,24192,00028,:Z64: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:6560^FT757,190^A0R,83,96^FH\^FDDr. "+name+"^FS^FT330,270^A0R,83,96^FH\^FD"+date+"^FS^FT200,270^A0R,83,96^FH\^FD"+time+"^FS^FT65,230^A0R,83,96^FH\^FD"+dayWritten+"^FS^LRY^FO2,2^GB0,894,156^FS^LRN^PQ1,0,1,Y^XZ");
+	
+		})
+//end
+})   
+	}
+
+	
+	
 	
 	
 	if(action == 'signout'){
@@ -399,9 +454,12 @@ if(!location)
 
   // if (input && input.action && action == 'close') {
   if (input) {  
+		gs.info("test");
   var action = input.action;  
 		var first = input.first;
+		var firstP = input.firstP;
 		var last = input.last
+		var lastP = input.lastP;
 		var visit = input.visit
 		var badge = input.badge;
 		//var resultText = input.resultText;
@@ -409,6 +467,18 @@ if(!location)
 		var driversLicenseNumber = input.DLN;
 		var expiration = input.EXP;
 		var raw = input.result;
+		
+		if (firstP){
+		var provider = new GlideRecord('x_sthc_security_ch_security_provider_checkin');
+		provider.initialize();
+		provider.first_name = firstP;
+		provider.last_name = lastP;
+		provider.check_in_time = new GlideDateTime().getDisplayValue();
+		provider.setValue('location',location);
+		provider.insert();
+		firstP = '';
+	}
+
     
 	if (first){
 		var visitor = new GlideRecord('x_sthc_security_ch_security_checkin_table');
@@ -453,7 +523,9 @@ if(!location)
 
 function clearData(){
 	data.first = '';
+	data.firstP = '';
 	data.last = '';
+	data.lastP = '';
 	data.visit = '';
 	data.ID = '';
 	data.badge = '';
@@ -470,7 +542,7 @@ function clearData(){
         <sys_created_on>2017-07-29 03:52:35</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>fc762d3c6fd0830061f06ea22e3ee45f</sys_id>
-        <sys_mod_count>253</sys_mod_count>
+        <sys_mod_count>205</sys_mod_count>
         <sys_name>Security Checkin</sys_name>
         <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
         <sys_policy/>
@@ -478,7 +550,7 @@ function clearData(){
         <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
         <sys_update_name>sp_widget_fc762d3c6fd0830061f06ea22e3ee45f</sys_update_name>
         <sys_updated_by>LGOMEZ</sys_updated_by>
-        <sys_updated_on>2019-02-26 20:11:18</sys_updated_on>
+        <sys_updated_on>2019-05-22 21:31:25</sys_updated_on>
         <template><![CDATA[     <div style="cursor:pointer">
     <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('scan')">
     <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
@@ -510,6 +582,15 @@ function clearData(){
     <h3>Employee Sign-in</h3>
     <span>Did you forget your badge? Sign-in here.</span>
       
+  </a>
+  </div>
+
+
+ <div style="cursor:pointer">
+    <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" ng-click="c.uiAction('provider')">
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h3>Providers</h3>
+    <span>Post acute care providers</span>
   </a>
   </div>
   <!--
