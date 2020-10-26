@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="Security Signature Translation" max_length="40" name="x_sthc_security_ch_security_signature_translation" sizeclass="9" type="collection">
+        <element label="Link" max_length="40" name="link" type="string"/>
+        <element label="Signature" max_length="20000" name="signature" type="string"/>
+    </element>
+</database>

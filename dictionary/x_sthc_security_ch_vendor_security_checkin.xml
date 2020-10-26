@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Vendor Security Checkin" max_length="40" name="x_sthc_security_ch_vendor_security_checkin" sizeclass="14" type="collection">
+        <element label="Areas to be Accessed" max_length="40" name="areas" type="string"/>
+        <element label="I do not have a new onset cough that began within the last 14 days." max_length="40" name="cough" type="boolean"/>
+        <element label="I have not been in contact with anyone suspected or confirmed of having COVID-19" max_length="40" name="covid" type="boolean"/>
+        <element label="I do not have a fever in excess of 100 degrees Fahrenheit." max_length="40" name="fever" type="boolean"/>
+        <element label="I do not have a household member diagnosed with or demonstrating the above sympt" max_length="40" name="household" type="boolean"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element label="To the best of my knowledge I do not have COVID-19." max_length="40" name="ppe" type="boolean"/>
+        <element label="Signature" max_length="40" name="sig" type="user_image"/>
+        <element label="I am not experiencing shortness of breath." max_length="40" name="sob" type="boolean"/>
+        <element label="Vendor Name" max_length="40" name="vendor" type="string"/>
+    </element>
+</database>

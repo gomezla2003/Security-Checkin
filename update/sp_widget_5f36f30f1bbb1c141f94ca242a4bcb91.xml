@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {  
+  var c = this;  
+	
+	
+
+$scope.submit = function(){
+	if(!c.data.src){
+	swal("Signature Error", "Please sign, and save your signature", "error");
+	}
+	else{
+		c.data.yes = 'true';
+		c.server.update();
+	swal("Thank you", "You have been checked-in","success").then(function () {
+		var url = 'https://www.honorhealth.com/';
+	top.window.location = url;
+		
+	});
+	}
+}
+
+
+$scope.reject = function(){
+	if(!c.data.src){
+	swal("Signature Error", "Please sign, and save your signature", "error");
+	}
+	else{
+		c.data.no = 'false';
+		c.server.update();
+	swal("Thank You", "This request has been cancelled","error").then(function () {
+		var url = 'https://www.honorhealth.com/';
+	top.window.location = url;
+		
+	});
+	}
+}
+
+}
+		
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.white{&#13;
+ text-color: white; &#13;
+  color:#fff;&#13;
+}&#13;
+&#13;
+body {&#13;
+    font-family: sans-serif;&#13;
+    font-weight: 800;&#13;
+    background: #eee;&#13;
+  }&#13;
+  .switch {&#13;
+    position: relative;&#13;
+    top: 50%;&#13;
+    left: 88%;&#13;
+    width: 150px;&#13;
+    height: 50px;&#13;
+    text-align: center;&#13;
+    margin: -30px 0 0 -75px;&#13;
+    background: #00bc9c;&#13;
+    transition: all 0.2s ease;&#13;
+    border-radius: 25px;&#13;
+  }&#13;
+  .switch span {&#13;
+    position: absolute;&#13;
+    width: 20px;&#13;
+    height: 4px;&#13;
+    top: 50%;&#13;
+    left: 50%;&#13;
+    margin: -2px 0px 0px -4px;&#13;
+    background: #fff;&#13;
+    display: block;&#13;
+    transform: rotate(-45deg);&#13;
+    transition: all 0.2s ease;&#13;
+  }&#13;
+  .switch span:after {&#13;
+    content: "";&#13;
+    display: block;&#13;
+    position: absolute;&#13;
+    width: 4px;&#13;
+    height: 12px;&#13;
+    margin-top: -8px;&#13;
+    background: #fff;&#13;
+    transition: all 0.2s ease;&#13;
+  }&#13;
+  input[type=radio] {&#13;
+    display: none;&#13;
+  }&#13;
+  .switch label {&#13;
+    cursor: pointer;&#13;
+    color: rgba(0,0,0,0.2);&#13;
+    width: 60px;&#13;
+    line-height: 50px;&#13;
+    transition: all 0.2s ease;&#13;
+  }&#13;
+  label[for=yes] {&#13;
+    position: absolute;&#13;
+    left: 0px;&#13;
+    height: 20px;&#13;
+  }&#13;
+  label[for=no] {&#13;
+    position: absolute;&#13;
+    right: 0px;&#13;
+  }&#13;
+  #no:checked ~ .switch {&#13;
+    background: #eb4f37;&#13;
+  }&#13;
+  #no:checked ~ .switch span {&#13;
+    background: #fff;&#13;
+    margin-left: -8px;&#13;
+  }&#13;
+  #no:checked ~ .switch span:after {&#13;
+    background: #fff;&#13;
+    height: 20px;&#13;
+    margin-top: -8px;&#13;
+    margin-left: 8px;&#13;
+  }&#13;
+  #yes:checked ~ .switch label[for=yes] {&#13;
+    color: #fff;&#13;
+  }&#13;
+  #no:checked ~ .switch label[for=no] {&#13;
+    color: #fff;&#13;
+  }&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+          html, body {&#13;
+            height: 100%;&#13;
+            width: 100%;&#13;
+            margin: 0;&#13;
+            padding: 0;&#13;
+          }&#13;
+&#13;
+          .container {&#13;
+            border: 1px solid red;&#13;
+            padding: 10px 10px 40px 10px;&#13;
+            position: relative;&#13;
+            margin: 0 auto 0 auto;&#13;
+            height: 100%;&#13;
+          }&#13;
+&#13;
+          .container .signature {&#13;
+            border: 1px solid orange;&#13;
+            margin: 0 auto;&#13;
+            cursor: pointer;&#13;
+          }&#13;
+&#13;
+          .container .signature canvas {&#13;
+            border: 1px solid #999;&#13;
+            margin: 0 auto;&#13;
+            cursor: pointer;&#13;
+          }&#13;
+&#13;
+          .container .buttons {&#13;
+            position: absolute;&#13;
+            bottom: 10px;&#13;
+            left: 10px;&#13;
+          }&#13;
+&#13;
+          .container .sizes {&#13;
+            position: absolute;&#13;
+            bottom: 10px;&#13;
+            right: 10px;&#13;
+          }&#13;
+&#13;
+          .container .sizes input {&#13;
+            width: 4em;&#13;
+            text-align: center;&#13;
+          }&#13;
+&#13;
+          .result {&#13;
+            border: 1px solid blue;&#13;
+            margin: 30px auto 0 auto;&#13;
+            height: 220px;&#13;
+            width: 568px;&#13;
+          }&#13;
+        &#13;
+&#13;
+.container {&#13;
+  padding-top: 30px;&#13;
+  border: 1px solid lightgray;&#13;
+  border-radius: 5px;&#13;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);&#13;
+  margin: 20px;&#13;
+  vertical-align: middle;&#13;
+  &#13;
+}&#13;
+&#13;
+.icon-success {&#13;
+    color: #5CB85C;&#13;
+}&#13;
+.red{&#13;
+  background: #ff0000;&#13;
+}&#13;
+.green{&#13;
+  background: #008000;&#13;
+}</css>
+        <data_table>sp_instance_link</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,short_description,glyph,class_name,type,sc_category,url,kb_article,kb_topic,kb_category,sc_cat_item,sp_page,color</field_list>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Security Vendor Checkin</name>
+        <option_schema>[{"name":"link_template","label":"Template","type":"choice","choices":[{"label":"Top Icon","value":"Top Icon"},{"label":"Circle Icon","value":"Circle Icon"},{"label":"Color Box","value":"Color Box"}]}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  
+	
+//var CareLinkUser = gs.action.getGlideURI().get('script')
+
+
+	
+	if(input){
+
+		
+	var img = input.src;
+	var final_img = img.substr(22);
+	
+		
+var ven = new GlideRecord('x_sthc_security_ch_vendor_security_checkin');
+		ven.initialize();
+		ven.setValue('name',input.name);
+		var sysID = ven.insert();
+			
+			
+var sig = new GlideRecord('x_sthc_security_ch_security_signature_translation');
+	sig.initialize();
+	sig.link = sysID;
+	sig.signature = final_img;
+	sig.insert();
+		
+	
+				
+		}
+})(); 
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2020-10-16 18:42:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5f36f30f1bbb1c141f94ca242a4bcb91</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Security Vendor Checkin</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_widget_5f36f30f1bbb1c141f94ca242a4bcb91</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2020-10-19 20:17:04</sys_updated_on>
+        <template><![CDATA[<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Your Name</label>  
+  <div class="col-md-5">
+  <input ng-model="data.name" id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="vendor">Name of Vendor</label>  
+  <div class="col-md-5">
+  <input id="vendor" name="vendor" type="text" placeholder="Name of Vendor" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="area">Areas to be Accessed</label>  
+  <div class="col-md-5">
+  <input id="area" name="area" type="text" placeholder="Areas to be Accessed" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes"> I agree and certify that I will supply and wear PPE at all times while in an HonorHealth facility and as may be appropriate to the areas accessed or as mandated by HonorHealth staff.</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      I Agree
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">I will not visit any HonorHealth Facility unless I can certify:</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      To the best of my knowledge I do not have COVID-19.
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      I have not been in contact with anyone suspected or confirmed of having COVID-19 within the past 14 days while not wearing appropriate PPE protection.
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
+      I do not have a fever in excess of 100 degrees Fahrenheit.
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
+      I am not experiencing shortness of breath.
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-4" value="5">
+      I do not have a new onset cough that began within the last 14 days.
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="checkboxes-5">
+      <input type="checkbox" name="checkboxes" id="checkboxes-5" value="6">
+      I do not have a household member diagnosed with or demonstrating the above symptoms of COVID-19 within the past 14 days.
+    </label>
+	</div>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+
+
+
+
+
+  <div class="container" ng-style="{'max-width': boundingBox.width + 'px', 'max-height': boundingBox.height + 'px'}">
+  
+        
+    
+            
+          <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=1500 valign=top style='border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;background:#D3C0D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif'>WAIVER of CLAIM</span></b>
+  </td>
+ </tr>
+</table>
+
+          <div style="border: 1px solid #e5e5e5; height: auto; overflow: auto; padding: 10px;">
+
+<p class=Default><span style='font-size:11.0pt'>I acknowledge and understand that the HonorHealth facility 
+  I am entering is responding to and treating patients diagnosed with COVID-19 as a result of the current pandemic.  
+  I further understand and acknowledge that, while HonorHealth is following guidelines and taking all reasonable 
+  precautions to  protect patients and staff, it CANNOT and DOES NOT assume the responsibility of protecting vendor 
+  representatives from exposure to or contracting COVID-19. I further understand and agree that my entrance to the 
+  HonorHealth facility is voluntary and that by entering the facility and signing this WAIVER of CLAIM I am releasing 
+  and forever discharging any claim I and/or my survivors may have against HonorHealth, its agents/employees and 
+  affiliated entities in the event that I contract COVID-19. I further understand and agree that refusal to execute 
+  this WAIVER and/or CERTIFICATION is a basis for refusal of access in the sole discretion of HonorHealth. 
+  This waiver will remain in effect for one year from the date of signature. </span></p>
+
+            </div>
+          
+          
+   
+     <label style="text-align: center;">
+       By signing below, I hereby acknowledge that I have completely read and fully understand the
+HonorHealth VENDOR WAIVER and CERTIFICATION.
+     </label>       
+     <signature-pad accept="accept" clear="clear" height="220" width="500" dataurl="dataurl"></signature-pad>
+
+            <div class="buttons">
+                <button ng-click="clear(); data.src = NULL">Clear Signature</button>
+               
+                <button ng-click="signature = accept(); data.src = signature.dataUrl">Save Signature</button>
+   
+            <span ng-if="data.src" >
+             Signature Saved <span class="glyphicon glyphicon-ok icon-success"></span>
+              </span>
+   </div>
+   </div>
+  
+  
+    <br>
+  <div class="form-group">
+  <div class="col-md-4">
+<button id="singlebutton" class="btn btn-primary green" ng-click="submit(); data.src = signature.dataUrl">Submit</button>
+     </div>
+</div>
+  <br><br><br><br>
+
+
+     
+]]></template>
+    </sp_widget>
+</record_update>
