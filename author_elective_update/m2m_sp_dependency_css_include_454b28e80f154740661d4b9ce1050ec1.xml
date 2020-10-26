@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <m2m_sp_dependency_css_include action="DELETE">
+<order>100</order>
+<sp_css_include display_value="zebra bootstrap min css">ff2b2ce80f154740661d4b9ce1050e0d</sp_css_include>
+<sp_dependency display_value="Zebra bootstrap">29ba68e80f154740661d4b9ce1050e15</sp_dependency>
+<sys_class_name>m2m_sp_dependency_css_include</sys_class_name>
+<sys_created_by>LGOMEZ</sys_created_by>
+<sys_created_on>2017-09-15 21:58:20</sys_created_on>
+<sys_customer_update>false</sys_customer_update>
+<sys_id>454b28e80f154740661d4b9ce1050ec1</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_name>zebra bootstrap min css.Zebra bootstrap</sys_name>
+<sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+<sys_update_name>m2m_sp_dependency_css_include_454b28e80f154740661d4b9ce1050ec1</sys_update_name>
+<sys_updated_by>LGOMEZ</sys_updated_by>
+<sys_updated_on>2017-09-15 21:58:20</sys_updated_on>
+</m2m_sp_dependency_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</application>
+        <comments/>
+        <file_path/>
+        <instance_id>25bc9655a91c5d0058ebf191520622b5</instance_id>
+        <instance_name>shc</instance_name>
+        <name>m2m_sp_dependency_css_include_454b28e80f154740661d4b9ce1050ec1</name>
+        <order/>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><m2m_sp_dependency_css_include action="INSERT_OR_UPDATE">
+<order>100</order>
+<sp_css_include display_value="zebra bootstrap min css">ff2b2ce80f154740661d4b9ce1050e0d</sp_css_include>
+<sp_dependency display_value="Zebra bootstrap">29ba68e80f154740661d4b9ce1050e15</sp_dependency>
+<sys_class_name>m2m_sp_dependency_css_include</sys_class_name>
+<sys_created_by>LGOMEZ</sys_created_by>
+<sys_created_on>2017-09-15 21:58:20</sys_created_on>
+<sys_customer_update>false</sys_customer_update>
+<sys_id>454b28e80f154740661d4b9ce1050ec1</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_name>zebra bootstrap min css.Zebra bootstrap</sys_name>
+<sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+<sys_update_name>m2m_sp_dependency_css_include_454b28e80f154740661d4b9ce1050ec1</sys_update_name>
+<sys_updated_by>LGOMEZ</sys_updated_by>
+<sys_updated_on>2017-09-15 21:58:20</sys_updated_on>
+</m2m_sp_dependency_css_include></record_update>]]></payload>
+        <payload_hash>-1022578693</payload_hash>
+        <record_name>zebra bootstrap min css.Zebra bootstrap</record_name>
+        <reverted_from/>
+        <source>78d02e556f10110061f09ea22e3ee49e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-02-28 21:25:32</sys_created_on>
+        <sys_id>97abd7f5dbac5b4474471cb51b961978</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>161de4e5be40000001</sys_recorded_at>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-02-28 21:25:32</sys_updated_on>
+        <type>Dependency CSS Includes</type>
+        <update_guid>9fabd7f517ac5b44654a0854b1523b77</update_guid>
+        <update_guid_history>9fabd7f517ac5b44654a0854b1523b77:-1022578693</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">3001f056dbec1b04808f68461b9619c8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-03-01 22:16:52</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="m2m_sp_dependency_css_include">m2m_sp_dependency_css_include</sys_db_object>
+        <sys_id>157e19e42c924a568cda7d763f418064</sys_id>
+        <sys_metadata>454b28e80f154740661d4b9ce1050ec1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>zebra bootstrap min css.Zebra bootstrap</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_scope_delete display_value="">c568ff30c146486a9cad47452f6c37a4</sys_scope_delete>
+        <sys_update_name>m2m_sp_dependency_css_include_454b28e80f154740661d4b9ce1050ec1</sys_update_name>
+        <sys_update_version display_value="m2m_sp_dependency_css_include_454b28e80f154740661d4b9ce1050ec1">97abd7f5dbac5b4474471cb51b961978</sys_update_version>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-03-01 22:16:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

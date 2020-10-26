@@ -6,8 +6,10 @@
         <dynamic_title_structure/>
         <id>security_package_pickup</id>
         <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
         <public>false</public>
         <roles>admin</roles>
+        <seo_script/>
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>LGOMEZ</sys_created_by>
@@ -24,5 +26,7 @@
         <sys_updated_by>LGOMEZ</sys_updated_by>
         <sys_updated_on>2017-09-14 23:14:21</sys_updated_on>
         <title>Security Package Pickup</title>
+        <use_seo_script>false</use_seo_script>
     </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=cc709dda6f104300277218d22e3ee446"/>
 </record_update>

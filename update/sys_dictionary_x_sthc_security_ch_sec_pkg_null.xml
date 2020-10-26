@@ -47,23 +47,23 @@
         <reference_qual/>
         <reference_qual_condition/>
         <reference_type/>
-        <sizeclass/>
+        <sizeclass>0</sizeclass>
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>LGOMEZ</sys_created_by>
         <sys_created_on>2017-08-02 17:52:31</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
-        <sys_id>273d9c33dbb72f8096b17d8bbf96194c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_id>a30dcd9a6f104300277218d22e3ee459</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>x_sthc_security_ch_sec_pkg</sys_name>
         <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
-        <sys_update_name>sys_dictionary_x_sthc_security_ch_sec_pkg_NULL</sys_update_name>
+        <sys_update_name>sys_dictionary_x_sthc_security_ch_sec_pkg_null</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2019-03-01 22:16:44</sys_updated_on>
+        <sys_updated_on>2020-10-01 11:02:30</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

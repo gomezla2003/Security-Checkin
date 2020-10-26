@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Security Provider Checkin" max_length="40" name="x_sthc_security_ch_security_provider_checkin" type="collection">
-        <element label="Check in time" max_length="40" name="check_in_time" type="glide_date_time"/>
+    <element label="Security Provider Checkin" max_length="40" name="x_sthc_security_ch_security_provider_checkin" sizeclass="26" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Check in time" max_length="40" name="check_in_time" type="glide_date_time"/>
         <element label="First Name" max_length="40" name="first_name" type="string"/>
         <element label="Last Name" max_length="40" name="last_name" type="string"/>
-        <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
         <index name="index">
             <element name="location"/>
         </index>

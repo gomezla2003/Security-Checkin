@@ -40,4 +40,5 @@
         <url/>
         <widget_parameters/>
     </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=985a095a6f104300277218d22e3ee4ed"/>
 </record_update>

@@ -3,7 +3,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes/>
+        <attributes>edge_encryption_enabled=true</attributes>
         <audit>false</audit>
         <calculation>(function calculatedFieldValue(current) {
 
@@ -54,7 +54,7 @@
         <sys_created_by>LGOMEZ</sys_created_by>
         <sys_created_on>2018-03-02 20:46:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>e44ddc33dbb72f8096b17d8bbf961937</sys_id>
+        <sys_id>27d5ed2adb685f04808f68461b9619fe</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Did not check out</sys_name>
         <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
@@ -62,8 +62,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
         <sys_update_name>sys_dictionary_x_sthc_security_ch_security_checkin_table_did_not_check_out</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2019-03-01 22:16:45</sys_updated_on>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2019-05-22 21:39:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

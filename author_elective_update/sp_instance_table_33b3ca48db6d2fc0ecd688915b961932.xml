@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list/>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">d117955e6f104300277218d22e3ee455</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table with URL Filter">5d8f9dc2936832003706dfa5e57ffb06</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-10-29 17:45:57</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>33b3ca48db6d2fc0ecd688915b961932</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_instance_table_33b3ca48db6d2fc0ecd688915b961932</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-10-29 17:45:57</sys_updated_on>
+        <table/>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</application>
+        <comments/>
+        <file_path/>
+        <instance_id>25bc9655a91c5d0058ebf191520622b5</instance_id>
+        <instance_name>shc</instance_name>
+        <name>sp_instance_table_33b3ca48db6d2fc0ecd688915b961932</name>
+        <order/>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table"><sp_instance_table action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><display_field/><field_list/><filter/><glyph/><id/><maximum_entries>5</maximum_entries><order>1</order><order_by/><order_direction>asc</order_direction><roles/><short_description/><size>md</size><sp_column display_value="1">d117955e6f104300277218d22e3ee455</sp_column><sp_page/><sp_widget display_value="Data Table with URL Filter">5d8f9dc2936832003706dfa5e57ffb06</sp_widget><sys_class_name>sp_instance_table</sys_class_name><sys_created_by>LGOMEZ</sys_created_by><sys_created_on>2018-10-29 17:45:57</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>33b3ca48db6d2fc0ecd688915b961932</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope><sys_update_name>sp_instance_table_33b3ca48db6d2fc0ecd688915b961932</sys_update_name><sys_updated_by>LGOMEZ</sys_updated_by><sys_updated_on>2018-10-29 17:45:57</sys_updated_on><table/><title/><url/><widget_parameters/></sp_instance_table></record_update>]]></payload>
+        <payload_hash>-2060505041</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>97e27788139dc3c0373476666144b04e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-10-29 17:45:57</sys_created_on>
+        <sys_id>f7b3ca48db6d2fc0ecd688915b961933</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>166c0eea5700000001</sys_recorded_at>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-10-29 17:45:57</sys_updated_on>
+        <type>Instance with Table</type>
+        <update_guid>ffb3ca48946d2fc0af7e604db1ed6332</update_guid>
+        <update_guid_history>ffb3ca48946d2fc0af7e604db1ed6332:-2060505041</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">e5d30688db6d2fc0ecd688915b96197c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-10-29 17:46:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sp_instance_table">sp_instance_table</sys_db_object>
+        <sys_id>41db18ce080741c0ad234cfd0310d910</sys_id>
+        <sys_metadata>33b3ca48db6d2fc0ecd688915b961932</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_scope_delete display_value="">c568ff30c146486a9cad47452f6c37a4</sys_scope_delete>
+        <sys_update_name>sp_instance_table_33b3ca48db6d2fc0ecd688915b961932</sys_update_name>
+        <sys_update_version display_value="sp_instance_table_33b3ca48db6d2fc0ecd688915b961932">f7b3ca48db6d2fc0ecd688915b961933</sys_update_version>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-10-29 17:46:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

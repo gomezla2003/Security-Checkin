@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="DL license storage" max_length="40" name="x_sthc_security_ch_dl_license_storage" sizeclass="0" type="collection">
+        <element label="data" max_length="2000" name="data" type="string"/>
+    </element>
+</database>

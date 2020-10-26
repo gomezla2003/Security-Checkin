@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <glyph>empty</glyph>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>0</order>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">ae93d2516f54c30061f06ea22e3ee495</sp_column>
+        <sp_page display_value="visitor_signout">e64ede516f54c30061f06ea22e3ee446</sp_page>
+        <sp_widget display_value="Security Checkin">fc762d3c6fd0830061f06ea22e3ee45f</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-07-29 03:53:42</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>41b661bc6fd0830061f06ea22e3ee4bf</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>test3</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_instance_link_41b661bc6fd0830061f06ea22e3ee4bf</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2017-07-30 21:26:09</sys_updated_on>
+        <title>test3</title>
+        <type>url</type>
+        <url>https://shcdev.service-now.com/csm?id=visitor_signout&amp;table=x_sthc_security_ch_security_checkin_table&amp;filter=check_out_timeISEMPTY</url>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Color Box",
+		"displayValue": "Color Box"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</application>
+        <comments/>
+        <file_path/>
+        <instance_id>25bc9655a91c5d0058ebf191520622b5</instance_id>
+        <instance_name>shc</instance_name>
+        <name>sp_instance_link_41b661bc6fd0830061f06ea22e3ee4bf</name>
+        <order/>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_link"&gt;&lt;sp_instance_link action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;primary&lt;/color&gt;&lt;css/&gt;&lt;glyph&gt;empty&lt;/glyph&gt;&lt;id/&gt;&lt;kb_article/&gt;&lt;kb_category/&gt;&lt;kb_topic/&gt;&lt;order&gt;0&lt;/order&gt;&lt;sc_cat_item/&gt;&lt;sc_category/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;ae93d2516f54c30061f06ea22e3ee495&lt;/sp_column&gt;&lt;sp_page display_value="visitor_signout"&gt;e64ede516f54c30061f06ea22e3ee446&lt;/sp_page&gt;&lt;sp_widget display_value="Security Checkin"&gt;fc762d3c6fd0830061f06ea22e3ee45f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_link&lt;/sys_class_name&gt;&lt;sys_created_by&gt;LGOMEZ&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-07-29 03:53:42&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;41b661bc6fd0830061f06ea22e3ee4bf&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;test3&lt;/sys_name&gt;&lt;sys_package display_value="Security Checkin" source="x_sthc_security_ch"&gt;95046d3c6fd0830061f06ea22e3ee477&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Security Checkin"&gt;95046d3c6fd0830061f06ea22e3ee477&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_link_41b661bc6fd0830061f06ea22e3ee4bf&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;LGOMEZ&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-07-30 21:26:09&lt;/sys_updated_on&gt;&lt;title&gt;test3&lt;/title&gt;&lt;type&gt;url&lt;/type&gt;&lt;url&gt;https://shcdev.service-now.com/csm?id=visitor_signout&amp;amp;table=x_sthc_security_ch_security_checkin_table&amp;amp;filter=check_out_timeISEMPTY&lt;/url&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"link_template": {
+		"value": "Color Box",
+		"displayValue": "Color Box"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_link&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1979801430</payload_hash>
+        <record_name>test3</record_name>
+        <reverted_from/>
+        <source>d842f744139dc3c0373476666144b0d3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-09-14 23:11:04</sys_created_on>
+        <sys_id>74527b84139dc3c0373476666144b0c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>15e82a8f40a0000001</sys_recorded_at>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2017-09-14 23:11:04</sys_updated_on>
+        <type>Instance with Link</type>
+        <update_guid>34527b84759dc3c059766eb36d8622c7</update_guid>
+        <update_guid_history>34527b84759dc3c059766eb36d8622c7:-1979801430</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">55f9e098db68930474471cb51b9619f3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-02-23 16:38:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sp_instance_link">sp_instance_link</sys_db_object>
+        <sys_id>d9c88efe51454079a386cc783fa65191</sys_id>
+        <sys_metadata>41b661bc6fd0830061f06ea22e3ee4bf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>test3</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_scope_delete display_value="">c568ff30c146486a9cad47452f6c37a4</sys_scope_delete>
+        <sys_update_name>sp_instance_link_41b661bc6fd0830061f06ea22e3ee4bf</sys_update_name>
+        <sys_update_version display_value="sp_instance_link_41b661bc6fd0830061f06ea22e3ee4bf">74527b84139dc3c0373476666144b0c7</sys_update_version>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-02-23 16:38:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

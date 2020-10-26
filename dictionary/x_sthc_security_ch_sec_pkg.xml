@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Security Packages" max_length="40" name="x_sthc_security_ch_sec_pkg" type="collection">
-        <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
-        <element label="Pick-up time" max_length="40" name="pick_up_time" type="glide_date_time"/>
+    <element label="Security Packages" max_length="40" name="x_sthc_security_ch_sec_pkg" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Pick-up time" max_length="40" name="pick_up_time" type="glide_date_time"/>
         <index name="index">
             <element name="employee"/>
         </index>

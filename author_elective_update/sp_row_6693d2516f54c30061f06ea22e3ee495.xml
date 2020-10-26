@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <sp_column/>
+        <sp_container display_value="Security Checkin - Container 2">fd93d2116f54c30061f06ea22e3ee4f7</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-07-30 20:26:49</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>6693d2516f54c30061f06ea22e3ee495</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_update_name>sp_row_6693d2516f54c30061f06ea22e3ee495</sys_update_name>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2017-07-30 20:26:49</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</application>
+        <comments/>
+        <file_path/>
+        <instance_id>25bc9655a91c5d0058ebf191520622b5</instance_id>
+        <instance_name>shc</instance_name>
+        <name>sp_row_6693d2516f54c30061f06ea22e3ee495</name>
+        <order/>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><class_name/><order>1</order><sp_column/><sp_container display_value="Security Checkin - Container 2">fd93d2116f54c30061f06ea22e3ee4f7</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>LGOMEZ</sys_created_by><sys_created_on>2017-07-30 20:26:49</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>6693d2516f54c30061f06ea22e3ee495</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope><sys_update_name>sp_row_6693d2516f54c30061f06ea22e3ee495</sys_update_name><sys_updated_by>LGOMEZ</sys_updated_by><sys_updated_on>2017-07-30 20:26:49</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>1542618319</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>d842f744139dc3c0373476666144b0d3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2017-09-14 23:11:04</sys_created_on>
+        <sys_id>3852bb84139dc3c0373476666144b02a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>15e82a8f6770000001</sys_recorded_at>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2017-09-14 23:11:04</sys_updated_on>
+        <type>Row</type>
+        <update_guid>f452bb84699dc3c054fb469c4542082a</update_guid>
+        <update_guid_history>f452bb84699dc3c054fb469c4542082a:1542618319</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">015ae09cdb68930474471cb51b9619ae</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>LGOMEZ</sys_created_by>
+        <sys_created_on>2018-02-23 16:39:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>3ac82f16069540d19677df7932175779</sys_id>
+        <sys_metadata>6693d2516f54c30061f06ea22e3ee495</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Security Checkin" source="x_sthc_security_ch">95046d3c6fd0830061f06ea22e3ee477</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Security Checkin">95046d3c6fd0830061f06ea22e3ee477</sys_scope>
+        <sys_scope_delete display_value="">c568ff30c146486a9cad47452f6c37a4</sys_scope_delete>
+        <sys_update_name>sp_row_6693d2516f54c30061f06ea22e3ee495</sys_update_name>
+        <sys_update_version display_value="sp_row_6693d2516f54c30061f06ea22e3ee495">3852bb84139dc3c0373476666144b02a</sys_update_version>
+        <sys_updated_by>LGOMEZ</sys_updated_by>
+        <sys_updated_on>2018-02-23 16:39:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
